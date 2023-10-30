@@ -1,0 +1,21 @@
+{
+  "$schema": "http://laravel-ide.com/schema/laravel-ide-v1.json",
+  "view": {
+    "paths": [
+      {
+        "path": "web/app/themes/base-project/resources/views",
+        "namespace": ""
+      }
+    ]
+  },
+  "blade": {
+    "components": {
+      "viewPaths": [
+        {
+          "path": "web/app/themes/base-project/resources/views/components",
+          "namespace": ""
+        }
+      ]
+    }
+  }
+}

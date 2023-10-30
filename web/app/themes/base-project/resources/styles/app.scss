@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "config/config";
+@import 'swiper/css/bundle';
+
+@import "blocks/blocks";
+@import "components/components";
+@import "features/features";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
+}
