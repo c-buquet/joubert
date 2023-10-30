@@ -3,7 +3,7 @@
   "view": {
     "paths": [
       {
-        "path": "web/app/themes/base-project/resources/views",
+        "path": "web/app/themes/remarquable/resources/views",
         "namespace": ""
       }
     ]
@@ -12,7 +12,7 @@
     "components": {
       "viewPaths": [
         {
-          "path": "web/app/themes/base-project/resources/views/components",
+          "path": "web/app/themes/remarquable/resources/views/components",
           "namespace": ""
         }
       ]

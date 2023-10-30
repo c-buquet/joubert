@@ -2,12 +2,11 @@
 
 namespace App\Providers;
 
+use App\Blocks\Madlib;
 use Roots\Acorn\ServiceProvider;
 
 class BlockServiceProvider extends ServiceProvider
 {
-    use App\Blocks\Madlib;
-
     /**
      * Register any application services.
      *
