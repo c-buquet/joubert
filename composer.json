@@ -74,7 +74,8 @@
     "wpackagist-plugin/resizable-editor-sidebar": "^1.0",
     "wpackagist-plugin/formidable": "^6.5",
     "wpackagist-plugin/duplicate-page": "^4.4",
-    "wpackagist-plugin/reusable-blocks-extended": "^0.9.0"
+    "wpackagist-plugin/reusable-blocks-extended": "^0.9.0",
+    "wpackagist-plugin/folders": "^2.9"
   },
   "config": {
     "optimize-autoloader": true,

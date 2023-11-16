@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4875daf1242bb72b74bcb804cd27e3c4",
+    "content-hash": "c803d54e0c47e0c8e2a56b5c1850b46b",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -5101,6 +5101,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/flexible-spacer-block/"
+        },
+        {
+            "name": "wpackagist-plugin/folders",
+            "version": "2.9.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/folders/",
+                "reference": "tags/2.9.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/folders.2.9.8.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/folders/"
         },
         {
             "name": "wpackagist-plugin/formidable",
