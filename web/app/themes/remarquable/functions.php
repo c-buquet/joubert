@@ -110,19 +110,3 @@ function my_mce4_options($init) {
     return $init;
 }
 add_filter('tiny_mce_before_init', 'my_mce4_options');
-
-require 'shortcodes.php';
-
-function prefix_register_script( $scripts ) {
-
-    $scripts[] = [
-        'handle'  => 'blog-gridbuilder',
-        'source'  => get_stylesheet_directory_uri() . "/resources/scripts/blog-gridbuilder.js",
-        'version' => '1.0.0',
-    ];
-
-    return $scripts;
-
-}
-
-add_filter( 'wp_grid_builder/frontend/register_scripts', 'prefix_register_script' );
