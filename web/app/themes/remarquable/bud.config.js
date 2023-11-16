@@ -15,8 +15,6 @@ module.exports = async (bud) => {
     .entry({
       app: ['@scripts/app', '@styles/app.scss'],
       editor: ['@scripts/editor', '@styles/editor.scss'],
-      vue: ['@scripts/madlib'],
-
     })
 
     /**
