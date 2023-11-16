@@ -4,7 +4,8 @@ namespace DeliciousBrains\WPMDB\Pro\Transfers\Files;
 
 use DeliciousBrains\WPMDB\Common\Filesystem\Filesystem;
 use DeliciousBrains\WPMDB\Common\Http\Http;
-use DeliciousBrains\WPMDB\Pro\Transfers\Receiver;
+use DeliciousBrains\WPMDB\Common\Transfers\Files\Chunker;
+use DeliciousBrains\WPMDB\Common\Transfers\Files\Util;
 use DeliciousBrains\WPMDB\Pro\Transfers\Sender;
 
 /**
@@ -73,10 +74,16 @@ class Payload
             throw new \Exception(sprintf(__('File does not exist - %s', 'wp-migrate-db'), $file['absolute_path']));
         }
 
-        $file_name         = $file['name'];
-        $file['type']      = 'file';
-        $file['md5']       = md5_file($file['absolute_path']);
-        $file['encoded']   = true;
+        $file_name          = $file['name'];
+        $file['type']       = 'file';
+        $file['md5']        = md5_file($file['absolute_path']);
+        $file['chunk_size'] = isset($file['chunk_path']) ? filesize($file['chunk_path']) : null;
+        $file['encoded']    = true;
+
+        if (!isset($file['size'])) {
+            $file['size'] = filesize($file['absolute_path']);
+        }
+
         $meta_data['file'] = $file + $meta_data['file'];
 
         $content = Sender::$start_meta . $file_name . "\n";
@@ -222,6 +229,7 @@ class Payload
         $end_payload    = false;
         $is_bucket_meta = false;
         $bucket_meta    = false;
+        $meta           = [];
 
         while (($line = fgets($stream)) !== false) {
             if (false !== strpos($line, Sender::$start_meta)) {
@@ -239,7 +247,25 @@ class Payload
                 $is_payload = true;
 
                 list($dest, $handle) = $this->get_handle_from_metadata($state_data, $meta);
-                continue;
+
+                //For pulls, we're not chunking so use the full filesize, for push check if a chunk size exists, otherwise use the full filesize.
+                $filesize = !empty($meta['file']['chunk_size']) ? $meta['file']['chunk_size'] : $meta['file']['size'];
+
+                // maybe we can stream the file without buffering
+                if (is_numeric($filesize)) {
+                    // set up stream copy here
+                    $streamed_bytes = stream_copy_to_stream($stream, $handle, $filesize);
+                    if (false === $streamed_bytes || $streamed_bytes !== $filesize) {
+                        error_log('Could not copy stream data to file. ' . print_r($dest, true));
+                        throw new \Exception(sprintf(__('Could not copy stream data to file. File name: %s', 'wp-migrate-db'), $dest));
+                    }
+                    // yay! we did it. Next loop gets the end of payload
+                    continue;
+                }
+
+                //We couldn't determine the filesize so let's bail
+                error_log('Could not determine payload filesize: ' . print_r($dest, true));
+                throw new \Exception(sprintf(__('Could not determine payload filesize. File name: %s', 'wp-migrate-db'), $dest));
             }
 
             if ($is_payload) {
@@ -262,6 +288,7 @@ class Payload
                 }
 
                 $this->create_file_by_line($line, $handle, $meta['file']);
+
             }
 
             if ($end_payload) {
@@ -368,7 +395,7 @@ class Payload
             $file .= self::PART_SUFFIX;
         }
 
-        $dest = Receiver::get_temp_dir($stage) . $file;
+        $dest = Util::get_temp_dir($stage) . $file;
         if ($stage === 'media_files') {
             // Filtered by MST
             $uploads = apply_filters('wpmdb_mf_destination_uploads', Util::get_wp_uploads_dir(), $state_data);
@@ -379,26 +406,6 @@ class Payload
         return $dest;
     }
 
-    /**
-     * @param $content
-     *
-     * @return bool|resource
-     * @throws \Exception
-     */
-    public function unpack_payload($content)
-    {
-        if (!$content) {
-            throw new \Exception(__('Failed to unpack payload.', 'wp-migrate-db'));
-        }
-
-        $stream = Receiver::create_memory_stream(gzdecode(base64_decode($content)));
-
-        if (!$stream) {
-            throw new \Exception(__('Failed to create stream from payload.', 'wp-migrate-db'));
-        }
-
-        return $stream;
-    }
 
     /**
      * @param $stage

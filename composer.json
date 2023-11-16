@@ -42,9 +42,9 @@
       "package": {
         "name": "wpackagist-plugin/advanced-custom-fields-pro",
         "type": "wordpress-plugin",
-        "version": "6.2.2",
+        "version": "6.2.3",
         "dist": {
-          "url": "https://connect.advancedcustomfields.com/index.php?v=6.2.2&p=pro&a=download&k=b3JkZXJfaWQ9MTQwNDIwfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wOS0yMSAxNTowMzowOA==",
+          "url": "https://connect.advancedcustomfields.com/index.php?v=6.2.3&p=pro&a=download&k=b3JkZXJfaWQ9MTQwNDIwfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wOS0yMSAxNTowMzowOA==",
           "type": "zip"
         }
       }

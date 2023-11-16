@@ -2,19 +2,22 @@
 
 namespace DeliciousBrains\WPMDB\Pro\Transfers\Files;
 
+use DeliciousBrains\WPMDB\Common\FullSite\FullSiteExport;
 use DeliciousBrains\WPMDB\Common\Http\Helper;
 use DeliciousBrains\WPMDB\Common\Http\Http;
 use DeliciousBrains\WPMDB\Common\Properties\DynamicProperties;
-use DeliciousBrains\WPMDB\Pro\Queue\Manager;
+use DeliciousBrains\WPMDB\Common\Queue\Manager;
+use DeliciousBrains\WPMDB\Common\Transfers\Files\Util;
 use DeliciousBrains\WPMDB\Pro\Transfers\Receiver;
 use DeliciousBrains\WPMDB\Pro\Transfers\Sender;
+use DeliciousBrains\WPMDB\Common\Transfers\Files\TransferManager as Common_TransferManager;
 
 /**
  * Class TransferManager
  *
  * @package WPMDB\Transfers\Files
  */
-class TransferManager extends \DeliciousBrains\WPMDB\Pro\Transfers\Abstracts\TransferManagerAbstract
+class TransferManager extends Common_TransferManager
 {
 
     /**
@@ -61,9 +64,10 @@ class TransferManager extends \DeliciousBrains\WPMDB\Pro\Transfers\Abstracts\Tra
         Helper $http_helper,
         Http $http,
         Receiver $receiver,
-        Sender $sender
+        Sender $sender,
+        FullSiteExport $full_site_export
     ) {
-        parent::__construct($manager, $payload, $util);
+        parent::__construct($manager, $util, $http, $full_site_export);
         $this->queueManager    = $manager;
         $this->payload         = $payload;
         $this->util            = $util;
@@ -73,27 +77,6 @@ class TransferManager extends \DeliciousBrains\WPMDB\Pro\Transfers\Abstracts\Tra
         $this->http            = $http;
         $this->size_controller = $size_controller;
         $this->dynamic_props   = DynamicProperties::getInstance();
-    }
-
-    /**
-     *
-     * Logic to handle pushes or pulls of files
-     *
-     * @param string $remote_url
-     * @param array  $processed  list of files to transfer
-     * @param array  $state_data MDB's array of $_POST[] items
-     *
-     * @return mixed
-     * @see $this->ajax_initiate_file_migration
-     *
-     */
-    public function manage_file_transfer($remote_url, $processed, $state_data)
-    {
-        if ('pull' === $state_data['intent']) {
-            return $this->handle_pull($processed, $state_data, $remote_url);
-        }
-
-        return $this->handle_push($processed, $state_data, $remote_url);
     }
 
     /**
@@ -108,7 +91,8 @@ class TransferManager extends \DeliciousBrains\WPMDB\Pro\Transfers\Abstracts\Tra
         $transfer_max                = $state_data['site_details']['remote']['transfer_bottleneck'];
         $actual_bottleneck           = $state_data['site_details']['remote']['max_request_size'];
         $high_performance_transfers  = $state_data['site_details']['remote']['high_performance_transfers'];
-        $force_performance_transfers = $state_data['forceHighPerformanceTransfers'];
+        $force_performance_transfers = isset($state_data['forceHighPerformanceTransfers']) ? $state_data['forceHighPerformanceTransfers'] : false;
+        $force_performance_transfers = apply_filters('wpmdb_force_high_performance_transfers', $force_performance_transfers, $state_data);
 
         $bottleneck                 = apply_filters('wpmdb_transfers_push_bottleneck',
             $actual_bottleneck); //Use slider value
@@ -149,17 +133,20 @@ class TransferManager extends \DeliciousBrains\WPMDB\Pro\Transfers\Abstracts\Tra
         // Convert 'file data' to 'folder data', as that's how the UI/Client displays progress
         $result = $this->util->process_queue_data($sent_copy, $state_data, $total_sent);
 
-        // If we're not chunking OR chunking is complete, remove file(s) from queue
-        if ( empty( $chunked )
-             || ( isset( $chunked['file']['percent_transferred'] ) && 1 === (int) $chunked['file']['percent_transferred'] ) ) {
+        // If we're not chunking
+        if ( empty( $chunked ) ) {
             $this->queueManager->delete_data_from_queue($count);
         }
 
         if ( ! empty( $chunked ) ) {
             $chunk_option_name = 'wpmdb_file_chunk_' . $state_data['migration_state_id'];
+
+            //chunking is complete, remove file(s) from queue and clean up the file chunk option
             if ( (int) $chunked['bytes_offset'] === $file['size'] ) {
                 delete_site_option( $chunk_option_name );
                 $file['chunking_done'] = true;
+
+                $this->queueManager->delete_data_from_queue($count);
             } else {
                 // Record chunk data to DB for next iteration
                 update_site_option( $chunk_option_name, $chunk_data );
@@ -185,10 +172,12 @@ class TransferManager extends \DeliciousBrains\WPMDB\Pro\Transfers\Abstracts\Tra
      */
     public function handle_pull($processed, $state_data, $remote_url)
     {
-        $transfer_max               = $this->util->get_transfer_bottleneck();
-        $actual_bottleneck          = $state_data['site_details']['local']['max_request_size'];
-        $high_performance_transfers = $state_data['site_details']['local']['high_performance_transfers'];
-        $force_performance_transfers = $state_data['forceHighPerformanceTransfers'];
+        $transfer_max                = $this->util->get_transfer_bottleneck();
+        $actual_bottleneck           = $state_data['site_details']['local']['max_request_size'];
+        $high_performance_transfers  = $state_data['site_details']['local']['high_performance_transfers'];
+        $force_performance_transfers = isset($state_data['forceHighPerformanceTransfers']) ? $state_data['forceHighPerformanceTransfers'] : false;
+        $force_performance_transfers = apply_filters('wpmdb_force_high_performance_transfers', $force_performance_transfers, $state_data);
+
         $bottleneck                 = apply_filters('wpmdb_transfers_pull_bottleneck',
             $actual_bottleneck); //Use slider value
         $fallback_payload_size = 2500000;
@@ -266,12 +255,11 @@ class TransferManager extends \DeliciousBrains\WPMDB\Pro\Transfers\Abstracts\Tra
 
         $state_data['sig'] = $this->http_helper->create_signature($sig_data, $state_data['key']);
 
-        $state_data['content']         = $payload;
         $state_data['action']          = $action;
         $state_data['remote_state_id'] = $state_data['migration_state_id'];
         $ajax_url                      = trailingslashit($remote_url) . 'wp-admin/admin-ajax.php';
 
-        $response = $this->sender->post_payload($state_data, $ajax_url);
+        $response = $this->sender->post_payload($payload, $state_data, $ajax_url);
 
         $decoded = json_decode($response->body);
 
@@ -355,12 +343,11 @@ class TransferManager extends \DeliciousBrains\WPMDB\Pro\Transfers\Abstracts\Tra
     public function attempt_post($state_data, $remote_url, $handle)
     {
         rewind($handle);
-        $stream_contents = base64_encode(gzencode(stream_get_contents($handle)));
         $stage           = $state_data['stage'];
         $key             = $stage === 'media_files' ? 'mf' : 'tp';
 
         try {
-            $transfer_status = $this->post($stream_contents, $state_data, "wpmdb{$key}_transfers_receive_file", $remote_url);
+            $transfer_status = $this->post($handle, $state_data, "wpmdb{$key}_transfers_receive_file", $remote_url);
         } catch (\Exception $e) {
             $this->util->catch_general_error($e->getMessage());
         }

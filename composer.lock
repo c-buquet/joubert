@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a97fb2d2ee07b798c0b7a7e79727aa9",
+    "content-hash": "4875daf1242bb72b74bcb804cd27e3c4",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -5023,10 +5023,10 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields-pro",
-            "version": "6.2.2",
+            "version": "6.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/index.php?v=6.2.2&p=pro&a=download&k=b3JkZXJfaWQ9MTQwNDIwfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wOS0yMSAxNTowMzowOA=="
+                "url": "https://connect.advancedcustomfields.com/index.php?v=6.2.3&p=pro&a=download&k=b3JkZXJfaWQ9MTQwNDIwfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wOS0yMSAxNTowMzowOA=="
             },
             "type": "wordpress-plugin"
         },
