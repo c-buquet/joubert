@@ -10,7 +10,7 @@
       <a href="#" title="Refirection">
         <button class="h-full px-8 flex items-center font-lato font-bold tracking-wider bg-green-light text-green-primary hover:bg-green-primary hover:text-green-light duration-700 ">CONTACT US</button>
       </a>
-      <div class="bg-green-primary w-24 p-6 flex items-center cursor-pointer">
+      <div class="bg-green-primary px-4 md:p-6 flex items-center cursor-pointer">
         <img class="w-5 md:w-auto" src="{{ assetImg('icons/menu-burger-base.svg') }}" alt="Menu Burger">
       </div>
     </div>
