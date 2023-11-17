@@ -15,8 +15,9 @@ class PageOptions extends Controller
         $FOOTER_DATAS = [];
         if (function_exists('get_field')) {
             $FOOTER_DATAS = [
-                'logo' => get_field('logo', 'option') ? get_field('logo', 'option') : [],
-                'slogan' => get_field('slogan', 'option') ? get_field('slogan', 'option') : [],
+                'logo' => get_field('logo', 'option') ? get_field('logo', 'option') : '',
+                'slogan' => get_field('slogan', 'option') ? get_field('slogan', 'option') : '',
+                'links_popup' => get_field('links_popup', 'option') ? get_field('links_popup', 'option') : [],
             ];
 
             return $FOOTER_DATAS;

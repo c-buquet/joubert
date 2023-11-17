@@ -11,10 +11,12 @@
         {!! $footerDatas['slogan'] !!}
     </div>
 
-    <div class="flex flex-row gap-4">
-      <x-link-with-arrow title="Terms"></x-link-with-arrow>
-      <x-link-with-arrow title="Privacy"></x-link-with-arrow>
-      <x-link-with-arrow title="Cookies"></x-link-with-arrow>
-    </div>
+    @if ($footerDatas['links_popup'])
+      <div class="flex flex-row gap-4">
+        @foreach ($footerDatas['links_popup'] as $linkPopup)
+          <x-link-with-arrow title="{{ $linkPopup['link_title'] }}"></x-link-with-arrow>
+        @endforeach
+      </div>
+    @endif
   </div>
 </footer>

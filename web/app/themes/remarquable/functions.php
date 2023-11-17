@@ -110,3 +110,20 @@ function my_mce4_options($init) {
     return $init;
 }
 add_filter('tiny_mce_before_init', 'my_mce4_options');
+
+// Fonction pour supprimer bug acf avec le système page (dupplique le contenu des champs en blanc)
+function custom_admin_styles() {
+    $current_screen = get_current_screen();
+
+    // Vérifier si l'écran actuel correspond à la page des options du thème
+    if (is_object($current_screen) && $current_screen->base === 'toplevel_page_theme_options') {
+        echo '<style>
+            .wp-editor-area {
+                display: none !important;
+            }
+        </style>';
+    }
+}
+
+// Action pour ajouter la feuille de style personnalisée dans l'administration
+add_action('admin_head', 'custom_admin_styles');
