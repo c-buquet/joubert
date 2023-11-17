@@ -71,7 +71,6 @@ module.exports = {
         '90': '90',
       },
       container: {
-        center: true,
         padding: {
           DEFAULT: '1.75rem',
           sm: '1rem',
