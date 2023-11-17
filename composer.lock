@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c803d54e0c47e0c8e2a56b5c1850b46b",
+    "content-hash": "5d1c437341e596acbb25fdc63aaa9b87",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -5020,6 +5020,24 @@
                 }
             ],
             "time": "2022-01-24T18:55:24+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/acf-extended",
+            "version": "0.8.9.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/acf-extended/",
+                "reference": "tags/0.8.9.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/acf-extended.0.8.9.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/acf-extended/"
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields-pro",

@@ -1,20 +1,12 @@
-@php
-    $color_ariane = get_field('color_ariane', get_the_ID()) ?? 'white';
-@endphp
-<a class="sr-only focus:not-sr-only" href="#main">
-    {{ __('Skip to content') }}
-</a>
-
 @include('sections.header')
 
-<main id="main" class="main relative pt-[102px] lg:pt-[150px]">
+<main id="main" class="main relative">
+    <div class="w-[50px] md:w-[100px] h-full absolute left-0 top-0 z-30 bg-green-primary border-r-2 border-white-cloud">
+    </div>
     @yield('content')
-</main>
 
-@hasSection('sidebar')
-    <aside class="sidebar">
-        @yield('sidebar')
-    </aside>
-@endif
+
+</main>
+<x-popup-entire-screen></x-popup-entire-screen>
 
 @include('sections.footer')

@@ -1,0 +1,56 @@
+.h1, h1 {
+  font-family: 'Playfair Display';
+  font-size: 3rem;
+  line-height: normal;
+  font-weight: 400;
+
+  @screen md{
+    font-size: 4.875rem;
+    line-height: 76px;
+  }
+}
+
+.h2, h2 {
+  font-family: 'Playfair Display';
+  font-size: 2.75rem;
+  line-height: normal;
+  font-weight: 400;
+
+  @screen md{
+    font-size: 4.25rem;
+    line-height: 76px;
+  }
+}
+
+.h3, h3 {
+  font-family: 'Playfair Display';
+  font-size: 2.65rem;
+  line-height: normal;
+  font-weight: 600;
+
+  @screen md{
+    font-size: 3rem;
+    line-height: normal;
+  }
+}
+
+.h4, h4 {
+  font-family: 'Playfair Display';
+  font-size: 2.625rem;
+  line-height: 2.75rem;
+  font-weight: 400;
+}
+
+.h5, h5 {
+  font-family: 'Lato', sans-serif;
+  font-size: 2.25rem;
+  line-height: normal;
+  font-weight: 400;
+}
+
+.h6, h6 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25rem;
+  line-height: normal;
+  font-weight: 400;
+}

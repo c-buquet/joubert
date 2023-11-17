@@ -2,61 +2,58 @@ const plugin = require('tailwindcss/plugin')
 
 const titles = {
   '.title-h1': {
-    fontFamily: 'Optima',
-    fontSize: "clamp(2.25rem, calc(2.25rem + (5 - 2.25) * ((100vw - 16rem) / (64 - 16))), 5rem)",
-    lineHeight: 'normal',
-    paddingBottom: '0.5rem',
-    marginBottom: '0rem',
-    fontWeight: 700,
+    fontFamily: 'Playfair Display',
+    fontSize: "4.875rem",
+    lineHeight: '76px',
+    fontWeight: 400,
   },
   '.title-h2': {
-    fontFamily: 'Optima Bold',
-    fontSize: "clamp(2.15rem, calc(2.15rem + (3.5 - 2.15) * ((100vw - 16rem) / (64 - 16))), 3.5rem)",
-    lineHeight: "normal",
-    paddingBottom: '1rem',
-    marginBottom: '0rem',
+    fontFamily: 'Playfair Display',
+    fontSize: "4.25rem",
+    lineHeight: "76px",
+    fontWeight: 400,
   },
   '.title-h3': {
-    fontFamily: 'Optima Bold',
-    fontSize: 'clamp(2rem, calc(2rem + (3 - 2) * ((100vw - 16rem) / (64 - 16))), 3rem)',
+    fontFamily: 'Playfair Display',
+    fontSize: '3rem',
     lineHeight: 'normal',
-    fontWeight: 'inherit',
-    paddingBottom: '0.875rem',
-    marginBottom: '0rem',
+    fontWeight: 600,
   },
   '.title-h4': {
-    fontFamily: 'Optima Bold',
-    fontSize: '2rem',
+    fontFamily: 'Playfair Display',
+    fontSize: '2.625rem',
     lineHeight: '2.75rem',
-    marginBottom: '0.25rem',
-    marginTop: '1.5rem',
+    fontWeight: 400,
   },
   '.title-h5': {
     fontFamily: "'Lato', sans-serif",
-    fontSize: '1.5rem',
+    fontSize: '2.25rem',
     lineHeight: 'normal',
-    fontWeight: 900,
+    fontWeight: 400,
   },
   '.title-h6': {
     fontFamily: "'Lato', sans-serif",
     fontSize: '1.25rem',
     lineHeight: 'normal',
-    fontWeight: 700,
+    fontWeight: 400,
   },
   '.title-mobile-h1': {
-    fontFamily: 'Optima Bold',
+    fontFamily: 'Playfair Display',
     fontSize: "2.25rem",
     lineHeight: "normal",
+    fontWeight: 400,
   },
   '.title-mobile-h2': {
-    fontFamily: 'Optima Bold',
-    fontSize: "2.15rem",
-    lineHeight: "normal",
-  },
-  '.title-mobile-h3': {
-    fontFamily: 'Optima Bold',
+    fontFamily: 'Playfair Display',
     fontSize: "2rem",
     lineHeight: "normal",
+    fontWeight: 400,
+  },
+  '.title-mobile-h3': {
+    fontFamily: 'Playfair Display',
+    fontSize: "1.75rem",
+    lineHeight: "normal",
+    fontWeight: 600,
   },
 }
 
@@ -67,71 +64,43 @@ module.exports = {
   ],
   theme: {
     extend: {
-      blur: {
-        'xxxl': '277px',
-      },
-      padding: {
-        '13': '3.375rem',
-      },
       zIndex: {
         '60': '60',
         '70': '70',
         '80': '80',
         '90': '90',
       },
-      letterSpacing: {
-        widest: '0.03125rem',
-        surtitle: '3px',
-      },
       container: {
+        center: true,
         padding: {
-          DEFAULT: '1rem',
-          sm: '0.3rem',
+          DEFAULT: '1.75rem',
+          sm: '1rem',
         },
       },
       fontFamily: {
         'lato': [
           "'Lato', sans-serif",
         ],
-        'optima-bold': [
-          'Optima Bold',
+        'playfair': [
+          "'Playfair Display', serif",
         ],
       },
-      fontSize: {
-        '5xxl': '2.8125rem',
-        '11xl': '11.25rem',
-      },
       boxShadow: {
-        '100': '0px 2px 20px rgba(125, 129, 141, 0.08)',
-        '200': '0px 2px 30px rgba(48, 70, 89, 0.15)',
-        'primary': '#fff -10px 10px 0px -1px, #EE3831 -10px 10px',
-        'primary-hover': '#fff -10px 10px 0px -1px, #FF605A -10px 10px',
         'contour': 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
       },
       backgroundImage: {
         'cards': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 41.67%, rgba(0, 0, 0, 0.67) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 59.9%, rgba(0, 0, 0, 0.3) 100%)',
       },
       colors: {
-        'red': {
-          '0' : '#EE3831',
-          '100' : '#FF605A',
-          '200' : '#FF928D',
-          '300' : '#FFD3D1',
+        'green': {
+          'primary' : '#03464A',
+          'light' : '#C9EBED',
+          'dark' : '#003235',
+          'paragraph' : '#345F62',
         },
-        'yellow-pge': '#F2B754',
-        'orange-pge': '#F19558',
-        'green-pge': '#5AB2AA',
-        'blue-pge': '#357AFF',
-        'blue-light-pge': 'rgba(53, 122, 255, 0.2)',
-        'grey': {
-          0: '#000000',
-          100: '#313131',
-          200: '#7D818D',
-          300: '#F1F1FA',
-          400: '#F8F8FD',
-          500: '#FFFFFF',
-          1010: '#101010',
-        },
+        'white': {
+          'cloud' : '#FBFBFB',
+        }
       },
       typography: (theme) => ({
         DEFAULT: {

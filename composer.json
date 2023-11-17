@@ -75,7 +75,8 @@
     "wpackagist-plugin/formidable": "^6.5",
     "wpackagist-plugin/duplicate-page": "^4.4",
     "wpackagist-plugin/reusable-blocks-extended": "^0.9.0",
-    "wpackagist-plugin/folders": "^2.9"
+    "wpackagist-plugin/folders": "^2.9",
+    "wpackagist-plugin/acf-extended": "0.8.9.5"
   },
   "config": {
     "optimize-autoloader": true,
