@@ -8,6 +8,7 @@ var navigation = new TimelineLite({ paused: true, reversed: true });
 $(".open-popup-entire-screen").click(function () {
     // Réinitialiser la timeline à chaque ouverture de popup
     navigation.clear();
+    $('body').toggleClass("overflow-hidden")
 
     var dataId = $(this).attr("data-id");
 
@@ -27,7 +28,6 @@ $(".open-popup-entire-screen").click(function () {
 });
 
 $(".close-popup-entire-screen").click(function () {
-
     var dataId = $(this).attr("id-close-popup");
     var popupSelector = $(".popup-entire-screen[id-popup='" + dataId + "']");
 
@@ -35,4 +35,5 @@ $(".close-popup-entire-screen").click(function () {
     if (popupSelector.length) {
         navigation.reverse();
     }
+    $('body').toggleClass("overflow-hidden")
 });

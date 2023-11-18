@@ -1,6 +1,17 @@
 #contact-us{
+  .frm_form_title{
+    font-weight: 400 !important;
+  }
   .text{
     @apply pt-6 pb-10 text-lg;
   }
+  textarea{
+    @apply bg-green-dark mt-5;
+    border-style: none !important;
+  }
 }
 
+.scroll-content{
+  overflow-y: auto;
+  height: calc(100vh - 200px);
+}

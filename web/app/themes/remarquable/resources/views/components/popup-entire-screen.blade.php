@@ -13,7 +13,7 @@
 
   <div class="pt-16">
     <div class="ml-[50px] md:ml-[100px]">
-      <div class="container-right">
+      <div class="container-right scroll-content">
         <div class="w-10/12 content-popup" id="{{ toKebabCase(''.$title.'') }}">
           @if (!$isform)
             <div>{!! $firstContent !!}</div>
