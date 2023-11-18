@@ -8,7 +8,7 @@
             "name": "image",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "(Obligatoire)",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -35,7 +35,7 @@
             "name": "title",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "(Obligatoire)",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -55,7 +55,7 @@
             "name": "button",
             "aria-label": "",
             "type": "acfe_advanced_link",
-            "instructions": "(Le premier bouton est \"Contact us\".Ne peut pas être changer car ce bouton ouvre une popup)",
+            "instructions": "(Le premier bouton est \"Contact us\".Ne peut pas être changer car ce bouton ouvre une popup \/ Obligatoire)",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -92,5 +92,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1700310144
+    "modified": 1700349747
 }

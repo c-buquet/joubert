@@ -25,7 +25,9 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium"
+            "preview_size": "medium",
+            "uploader": "",
+            "acfe_thumbnail": 0
         },
         {
             "key": "field_655676e8af901",
@@ -33,7 +35,7 @@
             "name": "title",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "(Obligatoire)",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -66,5 +68,12 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700165452
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1700349767
 }

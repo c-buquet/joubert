@@ -1,11 +1,11 @@
 {
-    "key": "group_65590f408ef25",
-    "title": "Bloc: Why choose us (4 cards)",
+    "key": "group_65593635ae8e3",
+    "title": "Bloc: Our Expert (Big cards)",
     "fields": [
         {
-            "key": "field_65590f4079edd",
-            "label": "Titre",
-            "name": "title",
+            "key": "field_65593636821f0",
+            "label": "Titre et texte",
+            "name": "title_text",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "(Obligatoire)",
@@ -23,7 +23,7 @@
             "delay": 0
         },
         {
-            "key": "field_65590fc5d75fe",
+            "key": "field_65593694821f1",
             "label": "Cartes",
             "name": "cards",
             "aria-label": "",
@@ -40,18 +40,18 @@
             "layout": "row",
             "pagination": 0,
             "min": 1,
-            "max": 4,
+            "max": 2,
             "collapsed": "",
             "button_label": "Ajouter un élément",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_65590fdfd75ff",
-                    "label": "Titre",
-                    "name": "title",
+                    "key": "field_655936a8821f2",
+                    "label": "Image de la carte",
+                    "name": "image",
                     "aria-label": "",
-                    "type": "textarea",
-                    "instructions": "",
+                    "type": "image",
+                    "instructions": "(Obligatoire)",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -59,21 +59,48 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "acfe_textarea_code": 0,
-                    "maxlength": "",
-                    "rows": "",
-                    "placeholder": "",
-                    "new_lines": "br",
-                    "parent_repeater": "field_65590fc5d75fe"
+                    "uploader": "",
+                    "return_format": "array",
+                    "acfe_thumbnail": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "parent_repeater": "field_65593694821f1"
                 },
                 {
-                    "key": "field_65590ff1d7600",
-                    "label": "Description",
-                    "name": "description",
+                    "key": "field_655936c7821f3",
+                    "label": "Titre de la carte",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "(Obligatoire)",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65593694821f1"
+                },
+                {
+                    "key": "field_655936db821f4",
+                    "label": "Texte de la carte (Hover)",
+                    "name": "text",
                     "aria-label": "",
                     "type": "textarea",
-                    "instructions": "",
+                    "instructions": "(Obligatoire)",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -87,7 +114,7 @@
                     "rows": "",
                     "placeholder": "",
                     "new_lines": "br",
-                    "parent_repeater": "field_65590fc5d75fe"
+                    "parent_repeater": "field_65593694821f1"
                 }
             ]
         }
@@ -97,7 +124,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/why-choose-us"
+                "value": "acf\/our-experts"
             }
         ]
     ],
@@ -117,5 +144,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1700350668
+    "modified": 1700350268
 }
