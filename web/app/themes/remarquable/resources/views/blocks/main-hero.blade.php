@@ -2,14 +2,14 @@
     $hero_image = $fields['hero_image'] ?? null;
     $title = $fields['title'] ?? null;
 @endphp
-<section class="{{ $classes }} h-screen">
+<section class="{{ $classes }} h-screen relative">
   <div class="ml-[50px] md:ml-[100px] h-full">
     <div class="container-right h-full">
       <div class="relative z-10 flex items-center h-full pt-24">
         <div class="w-10/12 lg:w-[735px] ml-6 pt-28">{!! $title !!}</div>
 
         <div class="w-full flex justify-center absolute bottom-10 left-1/2 -translate-x-2/4">
-          <img class="w-5 md:w-auto" src="{{ assetImg('icons/mouse-scroll.svg') }}" alt="Mouse scroll">
+          <img class="w-5 md:w-auto animate-bounce" src="{{ assetImg('icons/mouse-scroll.svg') }}" alt="Mouse scroll">
         </div>
       </div>
     </div>

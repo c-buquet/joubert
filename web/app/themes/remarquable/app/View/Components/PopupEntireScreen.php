@@ -32,19 +32,19 @@ class PopupEntireScreen extends Component
      *
      * @var bool
      */
-    public $is_Form;
+    public $isform;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($firstContent, $title = 'Need a title', $contents = [], $is_Form = false)
+    public function __construct($firstContent = 'Need first content', $title = 'Need a title', $contents = [], $isform = false)
     {
         $this->title = $title;
         $this->firstContent = $firstContent;
         $this->contents = $contents;
-        $this->is_Form = $is_Form;
+        $this->isform = $isform;
     }
 
     /**

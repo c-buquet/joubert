@@ -15,7 +15,7 @@
     <div class="ml-[50px] md:ml-[100px]">
       <div class="container-right">
         <div class="w-10/12 content-popup" id="{{ toKebabCase(''.$title.'') }}">
-          @if (!$is_Form)
+          @if (!$isform)
             <div>{!! $firstContent !!}</div>
             <div>
               @foreach ($contents as $content_popup)
@@ -25,7 +25,7 @@
               @endforeach
             </div>
           @else
-            Formulaire
+            @php echo FrmFormsController::get_form_shortcode( array( 'id' => 1 ) ); @endphp
           @endif
         </div>
       </div>

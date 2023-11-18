@@ -13,5 +13,6 @@
       <x-popup-entire-screen title="{{ $link['link_title'] }}" firstContent="{!! $link['first_content_popup'] !!}" :contents="$link['content_popup']" />
     @endforeach
 @endif
+<x-popup-entire-screen title="contact-us" isform />
 
 @include('sections.footer')
