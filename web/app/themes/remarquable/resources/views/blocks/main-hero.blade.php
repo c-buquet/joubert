@@ -2,7 +2,7 @@
     $hero_image = $fields['hero_image'] ?? null;
     $title = $fields['title'] ?? null;
 @endphp
-<section class="{{ $classes }} h-screen relative">
+<section class="{{ $classes }} {{ is_admin() ? 'h-[700px]' : 'h-screen' }} relative">
   <div class="ml-[50px] md:ml-[100px] h-full">
     <div class="container-right h-full">
       <div class="relative z-10 flex items-center h-full pt-24">

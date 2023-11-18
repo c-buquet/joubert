@@ -1,0 +1,59 @@
+{
+    "key": "group_60f1987203dc8",
+    "title": "Global : Couleur de fond",
+    "fields": [
+        {
+            "key": "field_60f198770c863",
+            "label": "Couleur de fond",
+            "name": "block_color",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "Permet de sélectionner la couleur de fond du bloc. Par défaut, le bloc a un fond blanc.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bg-white-cloud": "Blanc",
+                "bg-green-light": "Vert clair",
+                "bg-green-primary": "Vert Remarquable",
+                "bg-green-dark": "Vert sombre"
+            },
+            "default_value": "bg-green-primary",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/spacer-block"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1700332935
+}

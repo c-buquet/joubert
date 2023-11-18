@@ -1,0 +1,150 @@
+{
+    "key": "group_609bad240f65b",
+    "title": "Bloc d'espacement",
+    "fields": [
+        {
+            "key": "field_609bad2fc768b",
+            "label": "Espacements",
+            "name": "spacings",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Ajouter un élément",
+            "rows_per_page": 20,
+            "acfe_repeater_stylised_button": 0,
+            "sub_fields": [
+                {
+                    "key": "field_609bad44c768c",
+                    "label": "Device",
+                    "name": "device",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "null": "Mobiles",
+                        "sm": "Petits écrans",
+                        "md": "Tablettes",
+                        "lg": "Ordinateurs",
+                        "xl": "Très grands écrans"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "parent_repeater": "field_609bad2fc768b"
+                },
+                {
+                    "key": "field_609bad61c768d",
+                    "label": "Valeur",
+                    "name": "value",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "1 rem = 16px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "0": "0px",
+                        "px": "1px",
+                        "0.5": "0.125rem",
+                        "1": "0.25rem",
+                        "1.5": "0.375rem",
+                        "2": "0.5rem",
+                        "2.5": "0.625rem",
+                        "3": "0.75rem",
+                        "3.5": "0.875rem",
+                        "4": "1rem",
+                        "5": "1.25rem",
+                        "6": "1.5rem",
+                        "7": "1.75rem",
+                        "8": "2rem",
+                        "9": "2.25rem",
+                        "10": "2.5rem",
+                        "11": "2.75rem",
+                        "12": "3rem",
+                        "14": "3.5rem",
+                        "16": "4rem",
+                        "20": "5rem",
+                        "24": "6rem",
+                        "28": "7rem",
+                        "32": "8rem",
+                        "36": "9rem",
+                        "40": "10rem",
+                        "44": "11rem",
+                        "48": "12rem",
+                        "52": "13rem",
+                        "56": "14rem",
+                        "60": "15rem",
+                        "64": "16rem",
+                        "72": "18rem",
+                        "80": "20rem",
+                        "96": "24rem"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "parent_repeater": "field_609bad2fc768b"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/spacer-block"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1700327893
+}
