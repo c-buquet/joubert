@@ -94,6 +94,7 @@ module.exports = {
         'green': {
           'primary' : '#03464A',
           'light' : '#C9EBED',
+          'lightest' : '#DFE9EA',
           'dark' : '#003235',
           'paragraph' : '#345F62',
         },

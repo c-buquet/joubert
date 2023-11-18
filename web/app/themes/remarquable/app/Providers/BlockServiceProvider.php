@@ -6,6 +6,7 @@ use App\Blocks\MainHero;
 use App\Blocks\Contact;
 use App\Blocks\SpacerBlock;
 use App\Blocks\SimpleImage;
+use App\Blocks\WhyChooseUs;
 use Roots\Acorn\ServiceProvider;
 
 class BlockServiceProvider extends ServiceProvider
@@ -31,5 +32,6 @@ class BlockServiceProvider extends ServiceProvider
         (new Contact());
         (new SpacerBlock());
         (new SimpleImage());
+        (new WhyChooseUs());
     }
 }
