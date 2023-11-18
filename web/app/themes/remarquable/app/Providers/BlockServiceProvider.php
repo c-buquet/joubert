@@ -8,6 +8,7 @@ use App\Blocks\SpacerBlock;
 use App\Blocks\SimpleImage;
 use App\Blocks\WhyChooseUs;
 use App\Blocks\Presentation;
+use App\Blocks\ImageCorner;
 use Roots\Acorn\ServiceProvider;
 
 class BlockServiceProvider extends ServiceProvider
@@ -35,5 +36,6 @@ class BlockServiceProvider extends ServiceProvider
         (new SimpleImage());
         (new WhyChooseUs());
         (new Presentation());
+        (new ImageCorner());
     }
 }
