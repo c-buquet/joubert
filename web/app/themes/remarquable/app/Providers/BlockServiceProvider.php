@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Blocks\MainHero;
 use App\Blocks\Contact;
 use App\Blocks\SpacerBlock;
+use App\Blocks\SimpleImage;
 use Roots\Acorn\ServiceProvider;
 
 class BlockServiceProvider extends ServiceProvider
@@ -29,5 +30,6 @@ class BlockServiceProvider extends ServiceProvider
         (new MainHero());
         (new Contact());
         (new SpacerBlock());
+        (new SimpleImage());
     }
 }
