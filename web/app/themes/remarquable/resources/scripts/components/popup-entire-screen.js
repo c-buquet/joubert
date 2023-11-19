@@ -8,7 +8,6 @@ var navigation = new TimelineLite({ paused: true, reversed: true });
 $(".open-popup-entire-screen").click(function () {
     // Réinitialiser la timeline à chaque ouverture de popup
     navigation.clear();
-    $('body').toggleClass("overflow-hidden")
 
     var dataId = $(this).attr("data-id");
 
@@ -25,6 +24,7 @@ $(".open-popup-entire-screen").click(function () {
         .from(contentSelector, 0.5, { opacity: 0, y: 30 });
 
     navigation.play();
+
 });
 
 $(".close-popup-entire-screen").click(function () {
@@ -35,5 +35,4 @@ $(".close-popup-entire-screen").click(function () {
     if (popupSelector.length) {
         navigation.reverse();
     }
-    $('body').toggleClass("overflow-hidden")
 });
