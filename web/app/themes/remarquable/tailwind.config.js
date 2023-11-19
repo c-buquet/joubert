@@ -88,7 +88,7 @@ module.exports = {
         'contour': 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
       },
       backgroundImage: {
-        'cards': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 41.67%, rgba(0, 0, 0, 0.67) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 59.9%, rgba(0, 0, 0, 0.3) 100%)',
+        'cards-filter': 'linear-gradient(180deg, rgba(1,54,58,0) 0%, rgba(1,54,58,1) 100%)',
       },
       colors: {
         'green': {
