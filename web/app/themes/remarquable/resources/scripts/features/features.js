@@ -1,1 +1,2 @@
-require('./lenis-init')
+require('./scroll-content-x')
+require('./lenis-init.js')

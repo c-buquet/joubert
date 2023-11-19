@@ -1,12 +1,12 @@
-import Lenis from '@studio-freight/lenis'
+import Lenis from "@studio-freight/lenis";
 
 const lenis = new Lenis({});
 
 function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
+  lenis.raf(time);
+  requestAnimationFrame(raf);
 }
-requestAnimationFrame(raf)
+requestAnimationFrame(raf);
 
 //MAIN POPUP PARAMS
 $(".open-popup-entire-screen").click(function () {
@@ -17,7 +17,7 @@ $(".close-popup-entire-screen").click(function () {
   lenis.start();
 });
 
-$('.scroll-content').on('wheel', function(event) {
+$(".scroll-content").on("wheel", function (event) {
   event.preventDefault();
 
   // Récupérer l'élément .scroll-content
