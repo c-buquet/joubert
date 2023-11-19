@@ -10,6 +10,7 @@ use App\Blocks\WhyChooseUs;
 use App\Blocks\Presentation;
 use App\Blocks\ImageCorner;
 use App\Blocks\OurExperts;
+use App\Blocks\OurSolutionSlider;
 use Roots\Acorn\ServiceProvider;
 
 class BlockServiceProvider extends ServiceProvider
@@ -39,5 +40,6 @@ class BlockServiceProvider extends ServiceProvider
         (new Presentation());
         (new ImageCorner());
         (new OurExperts());
+        (new OurSolutionSlider());
     }
 }
