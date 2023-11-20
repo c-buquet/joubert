@@ -4,6 +4,14 @@
 
 @include('sections.header')
 
+<div id="loading" class="fixed block w-full h-full inset-0 {{ $_SESSION['disable_animations'] ? "hidden" : "" }}">
+  <div id="bg-green-dark" class="absolute bg-green-primary inset-0 w-full h-full"></div>
+  <div id="bg-green" class="absolute bg-green-light w-full h-full"></div>
+  <div id="loading-icon" class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-72 w-72 z-10">
+      <img class="w-full h-full object-contain" src="{{ assetImg('logo.svg') }}" alt="">
+  </div>
+</div>
+
 <main id="main" class="main relative">
     <div class="w-[50px] md:w-[100px] h-full absolute left-0 top-0 z-30 bg-green-primary border-r-2 border-white-cloud"></div>
     @yield('content')

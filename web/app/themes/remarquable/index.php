@@ -1,12 +1,16 @@
 <!doctype html>
 <?php
+  session_cache_expire(30);
+  session_start();
 
-  ?>
+  $_SESSION['disable_animations'] = isset($_SESSION['disable_animations']) ? 1 : 0;
+?>
 <html <?php language_attributes(); ?>>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
+    <script>window.disableAnimations = <?php echo $_SESSION['disable_animations']; ?></script>
   </head>
 
   <body <?php body_class(); ?>>
