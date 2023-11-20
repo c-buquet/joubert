@@ -2,7 +2,7 @@
   <div class="ml-[50px] md:ml-[100px]">
       <div class="flex flex-col lg:flex-row">
         <div class="h-full w-8/12 md:w-1/2 mx-auto lg:-ml-16">
-          <img class="" src="{{ $fields['image']['url'] }}" alt="{{ $fields['image']['title'] }}">
+          <img class="" src="{{ $fields['image']['url'] }}" alt="{!! $fields['image']['title'] !!}">
         </div>
         <div class="flex flex-col justify-center w-10/12 lg:w-5/12 mx-auto mt-12 lg:mt-0">
           <div class="relative">

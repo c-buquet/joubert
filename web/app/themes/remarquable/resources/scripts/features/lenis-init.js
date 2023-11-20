@@ -1,4 +1,7 @@
 import Lenis from "@studio-freight/lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 //active le js seulement en front-end !
 if (window.location.href.indexOf("/wp") === -1) {
@@ -6,9 +9,26 @@ if (window.location.href.indexOf("/wp") === -1) {
 
   function raf(time) {
     lenis.raf(time);
+    ScrollTrigger.update();
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".main-hero",
+      start: "top top",
+      end: "bottom center",
+      scrub: true,
+    },
+  });
+
+  tl.fromTo(".main-hero .lenis-title", { y: "10%" }, { y: "-15%" }, 0).fromTo(
+    ".main-hero .lenis-title",
+    { y: "10%" },
+    { y: "-15%" },
+    0
+  );
 
   //MAIN POPUP PARAMS
   $(".open-popup-entire-screen").click(function () {

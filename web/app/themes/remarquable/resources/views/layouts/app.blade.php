@@ -8,7 +8,7 @@
   <div id="bg-green-dark" class="absolute bg-green-primary inset-0 w-full h-full"></div>
   <div id="bg-green" class="absolute bg-green-light w-full h-full"></div>
   <div id="loading-icon" class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-72 w-72 z-10">
-      <img class="w-full h-full object-contain" src="{{ assetImg('logo.svg') }}" alt="">
+      <img class="w-full h-full object-contain" src="{{ assetImg('logo.svg') }}" alt="Remarquable!">
   </div>
 </div>
 
