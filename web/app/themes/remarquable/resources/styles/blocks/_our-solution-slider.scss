@@ -1,0 +1,16 @@
+.our-solution-slider{
+  .title-custom {
+    font-family: 'Playfair Display';
+    font-size: 2.75rem;
+    line-height: normal;
+    font-weight: 400;
+    @screen md{
+      font-size: 3rem;
+      line-height: 76px;
+    }
+    @screen xl{
+      font-size: 4.25rem;
+      line-height: 76px;
+    }
+  }
+}

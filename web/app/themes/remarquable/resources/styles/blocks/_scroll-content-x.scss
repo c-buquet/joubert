@@ -2,11 +2,24 @@
   overflow-x: auto; /* Activer le défilement horizontal pour la section */
   white-space: nowrap; /* Empêcher le retour à la ligne des éléments enfants */
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
   cursor: grab;
+    /* Propriétés spécifiques à Webkit (Chrome, Safari) */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Propriétés spécifiques à Gecko (Firefox) */
+    scrollbar-width: none;
+    -moz-scrollbar {
+      display: none;
+    }
   .slide-item {
-    flex: 0 0 auto; /* Empêcher chaque diapositive de s'étirer pour remplir l'espace */
+    flex: 1 0 auto; /* Empêcher chaque diapositive de s'étirer pour remplir l'espace */
     min-width: 100%; /* Chaque diapositive occupe toute la largeur du conteneur */
     scroll-snap-align: start; /* Assurer que chaque diapositive est alignée avec le début */
+  }
+
+  > div {
+    max-width: 100%; /* Ajuster la largeur au contenu */
   }
 }

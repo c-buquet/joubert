@@ -65,6 +65,11 @@ module.exports = {
   theme: {
     extend: {
       zIndex: {
+        '1' : '1',
+        '2' : '2',
+        '3' : '3',
+        '4' : '4',
+        '5' : '5',
         '60': '60',
         '70': '70',
         '80': '80',
@@ -83,6 +88,12 @@ module.exports = {
         'playfair': [
           "'Playfair Display', serif",
         ],
+      },
+      width: {
+        '18': '4.5rem',
+      },
+      height: {
+        '18': '4.5rem',
       },
       boxShadow: {
         'contour': 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
