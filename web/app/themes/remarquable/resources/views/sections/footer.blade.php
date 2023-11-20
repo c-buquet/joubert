@@ -1,7 +1,7 @@
 @php
   $footerDatas = App\Controllers\PageOptions::getFooterDatas() ?? null;
 @endphp
-<footer class="main-footer bg-green-primary px-10 pb-16 pt-12 border-t-2 border-white-cloud relative z-40">
+<footer class="main-footer bg-green-primary text-white-cloud px-10 pb-16 pt-12 border-t-2 border-white-cloud relative z-40">
   <div class="pb-4">
     <img src="{{ $footerDatas['logo'] }}" alt="Remarquable!">
   </div>

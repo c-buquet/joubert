@@ -19,7 +19,9 @@
               </div>
               <div>
                 <a href="{{ $fields['linkedin']['url'] }}" title="{!! $fields['linkedin']['title'] !!}" target="{{ $fields['linkedin']['target'] }}">
-                  <x-icons.linkedin-logo />
+                  <div class="svg-container">
+                    <x-icons.linkedin-logo />
+                  </div>
                 </a>
               </div>
             </div>
