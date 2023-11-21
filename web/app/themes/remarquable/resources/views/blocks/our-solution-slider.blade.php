@@ -1,7 +1,7 @@
 <section class="{{ $classes }} scroll-content-slides">
   <div class="ml-[50px] md:ml-[100px]">
     <div class="flex">
-      <div class="title-custom bg-green-primary flex items-center justify-center w-5/12 px-4">
+      <div class="title-custom bg-green-dark flex items-center justify-center w-5/12 px-4">
         {!! $fields['title'] !!}
       </div>
 

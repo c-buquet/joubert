@@ -23,10 +23,10 @@ if (window.location.href.indexOf("/wp") === -1) {
     },
   });
 
-  tl.fromTo(".main-hero .lenis-title", { y: "10%" }, { y: "-15%" }, 0).fromTo(
+  tl.fromTo(".main-hero .lenis-title", { y: "-5%" }, { y: "-25%" }, 0).fromTo(
     ".main-hero .lenis-title",
-    { y: "10%" },
-    { y: "-15%" },
+    { y: "-5%" },
+    { y: "-25%" },
     0
   );
 
