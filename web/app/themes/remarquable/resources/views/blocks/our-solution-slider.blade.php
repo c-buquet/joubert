@@ -9,7 +9,7 @@
         @if ($fields['slides'])
           <div class="slides-container flex">
             @foreach ($fields['slides'] as $slide)
-              <div class="slide-item {{ $loop->index > 0 ? '' : 'min-w-[730px] lg:min-w-full' }}">
+              <div class="slide-item">
                 <div class="flex justify-between items-center mb-10 relative">
                   <div class="z-1 absolute top-1/2 -translate-y-2/4 left-8 w-full h-[2px] bg-green-primary"></div>
                   <div class=" w-18 h-18 bg-green-lightest rounded-full relative">
