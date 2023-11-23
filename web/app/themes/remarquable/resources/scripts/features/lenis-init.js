@@ -40,8 +40,6 @@ if (window.location.href.indexOf("/wp") === -1) {
   });
 
   $(".scroll-content").on("wheel", function (event) {
-    event.preventDefault();
-
     // Récupérer l'élément .scroll-content
     var scrollContent = $(this);
 
