@@ -5,9 +5,9 @@
         {!! $fields['title_text'] !!}
       </div>
 
-      <div class="flex flex-row gap-6">
+      <div class="flex flex-col md:flex-row gap-6">
         @foreach ($fields['cards'] as $card)
-            <div class="w-1/2 relative flex flex-col items-center justify-center group min-h-[370px] max-h-[470px]">
+            <div class="w-full md:w-1/2 relative flex flex-col items-center justify-center group min-h-[370px] max-h-[470px]">
               <img class="absolute top-0 left-0 object-cover h-full w-full" src="{{ $card['image']['url'] }}" alt="{!! $card['image']['title'] !!}">
               <div class="absolute top-0 left-0 w-full h-full bg-cards-filter"></div>
 
