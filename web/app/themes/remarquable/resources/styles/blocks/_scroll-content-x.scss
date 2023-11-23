@@ -15,7 +15,6 @@
     }
   .slide-item {
     flex: 1 0 auto; /* Empêcher chaque diapositive de s'étirer pour remplir l'espace */
-    min-width: 100%; /* Chaque diapositive occupe toute la largeur du conteneur */
     scroll-snap-align: start; /* Assurer que chaque diapositive est alignée avec le début */
   }
 
