@@ -19,8 +19,8 @@
                   <div ></div>
                 </div>
                 <div class="absolute w-7/12" style="white-space: normal;">
-                  <div class="font-playfair text-5xl font-semibold pb-4">{!! $slide['title'] !!}</div>
-                  <div class="text-xl leading-8">{!! $slide['text'] !!}</div>
+                  <div class="font-playfair text-xl md:text-5xl font-semibold pb-4">{!! $slide['title'] !!}</div>
+                  <div class="md:text-xl leading-8">{!! $slide['text'] !!}</div>
                 </div>
               </div>
             @endforeach
