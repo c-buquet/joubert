@@ -4,17 +4,17 @@
   }
 
   40% {
-    transform: translateY(-20px);
+    transform: translateY(-5px);
   }
 
   60% {
-    transform: translateY(-10px);
+    transform: translateY(-2px);
   }
 }
 
 .icon-mouse {
   display: inline-block;
-  animation: bounce 2.5s infinite;
+  animation: bounce 2.75s infinite;
 }
 
 @keyframes bounceRight {

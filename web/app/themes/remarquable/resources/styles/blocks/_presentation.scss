@@ -2,6 +2,8 @@
   .svg-container {
     position: relative;
     display: inline-block;
+    transition: all 0.5s;
+    color: theme("colors.green.light");
     &::after {
       content: "";
       position: absolute;
@@ -18,9 +20,12 @@
     }
   }
 
-  .svg-container:hover::after {
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  .svg-container:hover{
+    color: theme("colors.green.primary");
+    &::after {
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
   }
 }

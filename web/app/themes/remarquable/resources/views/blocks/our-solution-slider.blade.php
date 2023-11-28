@@ -11,7 +11,7 @@
             @foreach ($fields['slides'] as $slide)
               <div class="slide-item">
                 <div class="flex justify-between items-center mb-10 relative">
-                  <div class="z-1 absolute top-1/2 -translate-y-2/4 left-8 w-full h-[2px] bg-green-primary"></div>
+                  <div class="z-1 absolute top-1/2 -translate-y-2/4 left-8 {{ $loop->last ? 'w-8/12' : 'w-full' }} h-[2px] bg-green-primary"></div>
                   <div class=" w-18 h-18 bg-green-lightest rounded-full relative">
                     <div class="w-6 h-6 bg-green-primary rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                   </div>

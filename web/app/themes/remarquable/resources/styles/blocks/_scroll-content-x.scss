@@ -14,9 +14,18 @@
       display: none;
     }
   .slide-item {
-    flex: 1 0 auto; /* Empêcher chaque diapositive de s'étirer pour remplir l'espace */
+    flex: 1 0 auto;
     min-width: 100%;
-    scroll-snap-align: start; /* Assurer que chaque diapositive est alignée avec le début */
+    scroll-snap-align: start;
+    @screen md{
+      width: 246px;
+    }
+    @screen lg{
+      width: 246px;
+    }
+    @screen xl{
+      width: auto;
+    }
   }
 
   > div {
