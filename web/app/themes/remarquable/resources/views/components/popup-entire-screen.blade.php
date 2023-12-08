@@ -1,5 +1,5 @@
 <div class="popup-entire-screen z-70" id-popup="{{ toKebabCase(''.$title.'') }}">
-  <div class="relative z-40 w-full h-12 md:h-24 border-b-2 border-white-cloud">
+  <div class="relative z-40 w-full h-12 md:h-20 border-b-2 border-white-cloud">
     <div class="flex justify-between items-center h-full px-3 md:px-7">
       <div class="flex">
         <img class="w-6 md:w-auto h-fit" src="{{ assetImg('logo.svg') }}" alt="Remarquable!">
