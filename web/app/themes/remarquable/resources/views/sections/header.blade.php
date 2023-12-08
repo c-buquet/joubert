@@ -1,7 +1,7 @@
 @php
   $MENU = App\Controllers\Menu::make('primary_navigation') ?? null;
 @endphp
-<header id="main-header" class="fixed w-full z-40 h-12 md:h-24 border-b-2 border-white-cloud">
+<header id="main-header" class="fixed w-full z-40 h-12 md:h-20 border-b-2 border-white-cloud">
   <div class="flex justify-between items-center h-full">
     <div class="flex pl-3 p-2 md:pl-7 md:p-6">
       <a href="/" title="Home">
