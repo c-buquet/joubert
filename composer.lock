@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d1c437341e596acbb25fdc63aaa9b87",
+    "content-hash": "7e61ddb20a54bc29d6c1583912378377",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -5135,24 +5135,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/breadcrumb-navxt/"
-        },
-        {
-            "name": "wpackagist-plugin/cloudinary-image-management-and-manipulation-in-the-cloud-cdn",
-            "version": "3.1.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/",
-                "reference": "tags/3.1.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cloudinary-image-management-and-manipulation-in-the-cloud-cdn.3.1.5.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/cloudinary-image-management-and-manipulation-in-the-cloud-cdn/"
         },
         {
             "name": "wpackagist-plugin/duplicate-page",
