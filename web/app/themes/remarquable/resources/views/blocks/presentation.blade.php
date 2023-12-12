@@ -1,5 +1,5 @@
 <section class="{{ $classes }} bg-green-dark">
-  <div class="ml-[50px] md:ml-[100px]">
+  <div class="ml-[50px] md:ml-[80px]">
       <div class="flex flex-col lg:flex-row">
         <div class="h-full w-8/12 md:w-5/12 xl:w-1/3 mx-auto lg:-ml-16">
           <img class="" src="{{ $fields['image']['url'] }}" alt="{!! $fields['image']['title'] !!}">

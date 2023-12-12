@@ -1,7 +1,7 @@
 <section class="{{ $classes }} relative">
   <img class="w-full h-full object-cover object-center absolute top-0 left-0" src="{{ $fields['image']['url'] }}" alt="{!! $fields['image']['title'] !!}">
 
-  <div class="ml-[50px] md:ml-[100px] flex items-center h-full py-32 md:pt-64 md:pb-60">
+  <div class="ml-[50px] md:ml-[80px] flex items-center h-full py-32 md:pt-64 md:pb-60">
     <div class="container-right">
       <div class="z-10 relative flex flex-col gap-14 items-center w-8/12 mx-auto">
         <div class="text-white-cloud text-center">
