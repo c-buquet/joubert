@@ -4,11 +4,8 @@
 
 @include('sections.header')
 
-<div id="loading" class="fixed block w-full h-full inset-0 {{ $_SESSION['disable_animations'] ? "hidden" : "" }}">
-  <div id="bg-green-dark" class="absolute bg-green-primary inset-0 w-full h-full"></div>
-  <div id="bg-green" class="absolute bg-green-light w-full h-full"></div>
-  <div id="loading-icon" class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-72 w-72 z-10">
-      <img class="w-full h-full object-contain" src="{{ assetImg('logo.svg') }}" alt="Remarquable!">
+<div id="loading" class="fixed block w-screen h-screen inset-0 bg-green-primary {{ $_SESSION['disable_animations'] ? "hidden" : "" }}">
+  <div id="loading-icon" class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full z-10">
   </div>
 </div>
 
