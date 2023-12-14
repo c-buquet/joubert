@@ -19,7 +19,7 @@
               <div class="h-full opacity-0 group-hover:opacity-100 duration-500 z-20 bg-green-primary py-6 lg:py-20 px-6 lg:px-16 flex flex-col gap-4 items-center justify-center border">
                 <div class="font-playfair font-bold text-2xl tracking-wide uppercase text-center">{!! $card['title'] !!}</div>
                 <x-icons.horizontal-bar color="bg-white-cloud" />
-                <div class="text-xl text-center">{!! $card['text'] !!}</div>
+                <div class="text-center">{!! $card['text'] !!}</div>
               </div>
             </div>
         @endforeach

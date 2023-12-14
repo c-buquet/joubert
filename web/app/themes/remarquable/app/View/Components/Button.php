@@ -21,7 +21,7 @@ class Button extends Component
      */
     public $classes = [
         'primary'   => [
-            'green' => 'font-lato font-bold uppercase px-6 py-4 lg:w-max tracking-wider text-green-primary hover:text-green-light flex items-center justify-center gap-x-3 bg-green-light hover:bg-green-primary duration-700',
+            'green' => 'font-lato font-bold uppercase px-6 py-4 lg:w-max tracking-wider text-green-primary hover:text-green-light flex items-center justify-center gap-x-3 bg-green-light border-2 hover:bg-green-primary border-green-light hover:border-green-primary duration-700',
         ],
         'secondary' => [
             'white'   => 'font-lato font-bold uppercase px-6 py-4 lg:w-max tracking-wider text-white-cloud hover:text-green-light flex items-center justify-center gap-x-3 bg-transparent border-2 border-white-cloud hover:border-green-light duration-700',

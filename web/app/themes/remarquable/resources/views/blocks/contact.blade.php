@@ -7,7 +7,7 @@
         <div class="text-white-cloud text-center">
           <h2>{!! $fields['title'] !!}</h2>
         </div>
-        <div class="flex flex-row flex-wrap justify-center gap-7">
+        <div class="flex flex-row flex-wrap justify-center items-center gap-7">
           <div class="cursor-pointer open-popup-entire-screen" data-id="contact-us">
             <x-button>Contact us</x-button>
           </div>

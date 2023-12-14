@@ -23,11 +23,19 @@ $(".scroll-content-slides").on("mousedown", function (event) {
         $(".scroll-content-slides").scrollLeft(
           $(".scroll-content-slides").scrollLeft() - momentum
         );
-        momentum *= 0.95; // Ajustez le facteur de décélération
+        momentum *= 0.95;
         requestAnimationFrame(inertialScroll);
       }
     }
 
     inertialScroll();
   });
+});
+
+$(".icon-arrow-slide").on("click", function() {
+  var scrollAmount = 700;
+  var currentScrollPosition = $(".scroll-content-slides").scrollLeft();
+  $(".scroll-content-slides").animate({
+      scrollLeft: currentScrollPosition + scrollAmount
+  }, 600);
 });

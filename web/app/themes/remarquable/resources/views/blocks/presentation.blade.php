@@ -9,7 +9,7 @@
             <div class="absolute -top-16 -left-9 text-green-light">
               <x-icons.quotes />
             </div>
-            <h5>{!! $fields['text'] !!}</h5>
+            <div class="title-mobile-h1">{!! $fields['text'] !!}</div>
           </div>
 
           @if (isset($fields['linkedin']) && $fields['linkedin'])

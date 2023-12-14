@@ -10,7 +10,7 @@
     </div>
     <div class="flex h-full">
       <button class="h-full px-8 flex items-center font-lato font-bold tracking-wider bg-green-light text-green-primary hover:bg-green-primary hover:text-green-light duration-700 open-popup-entire-screen" data-id="contact-us">CONTACT US</button>
-      <div class="bg-green-primary px-4 md:p-6 flex items-center cursor-pointer">
+      <div class="bg-green-primary px-4 md:p-6 hidden items-center cursor-pointer">
         <img class="w-5 md:w-auto" src="{{ assetImg('icons/menu-burger-base.svg') }}" alt="Menu Burger">
       </div>
     </div>

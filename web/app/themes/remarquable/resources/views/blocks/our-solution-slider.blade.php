@@ -26,7 +26,7 @@
             @endforeach
           </div>
         @endif
-        <div class="absolute bottom-20 right-20 icon-arrow-slide">
+        <div class="absolute bottom-20 right-20 icon-arrow-slide cursor-pointer">
           <x-icons.big-arrow />
         </div>
       </div>
