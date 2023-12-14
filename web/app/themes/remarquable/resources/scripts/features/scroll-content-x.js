@@ -33,7 +33,7 @@ $(".scroll-content-slides").on("mousedown", function (event) {
 });
 
 $(".icon-arrow-slide").on("click", function() {
-  var scrollAmount = 700;
+  var scrollAmount = 800;
   var currentScrollPosition = $(".scroll-content-slides").scrollLeft();
   $(".scroll-content-slides").animate({
       scrollLeft: currentScrollPosition + scrollAmount
