@@ -39,3 +39,26 @@ $(".icon-arrow-slide").on("click", function() {
       scrollLeft: currentScrollPosition + scrollAmount
   }, 600);
 });
+
+function checkScrollEnd() {
+  var $container = $(".scroll-content-slides");
+  var scrollLeft = $container.scrollLeft();
+  var scrollWidth = $container.get(0).scrollWidth;
+  var containerWidth = $container.width();
+
+  // Vérifie si le défilement a atteint la fin
+  if (scrollLeft + containerWidth >= scrollWidth - 100) {
+    $(".icon-arrow-slide").fadeOut(); // Effet de fondu pour masquer la flèche
+  } else {
+    $(".icon-arrow-slide").fadeIn(); // Effet de fondu pour afficher la flèche
+  }
+}
+
+// Appeler checkScrollEnd lors du défilement
+$(".scroll-content-slides").on("scroll", function() {
+  checkScrollEnd();
+});
+
+// Initialiser une fois au chargement de la page
+checkScrollEnd();
+
