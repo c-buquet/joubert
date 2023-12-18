@@ -14,7 +14,7 @@
     @if ($footerDatas['links_popup'])
       <div class="flex flex-row gap-4">
         @foreach ($footerDatas['links_popup'] as $linkPopup)
-          <x-link-with-arrow title="{{ $linkPopup['link_title'] }}"></x-link-with-arrow>
+          <x-link-with-arrow title="{!! $linkPopup['link_title'] !!}"></x-link-with-arrow>
         @endforeach
       </div>
     @endif
