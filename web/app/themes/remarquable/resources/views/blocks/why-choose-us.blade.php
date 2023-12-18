@@ -1,5 +1,5 @@
 <section class="{{ $classes }} text-green-primary {{ $fields['block_color'] ?? 'bg-white' }}">
-  <div class="ml-[50px] md:ml-[80px]">
+  <div class="lg:ml-[80px]">
     <div class="container-right">
       <div class="pb-20">
         {!! $fields['title'] !!}

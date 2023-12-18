@@ -26,10 +26,10 @@ html, body {
   @apply w-full px-4 mx-auto;
 
   @screen sm{
-    max-width: 540px;
+    max-width: 640px;
   }
   @screen md{
-    max-width: 668px;
+    max-width: 768px;
   }
   @screen lg{
     max-width: 924px;

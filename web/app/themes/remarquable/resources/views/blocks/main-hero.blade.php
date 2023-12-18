@@ -3,7 +3,7 @@
     $title = $fields['title'] ?? null;
 @endphp
 <section class="{{ $classes }} {{ is_admin() ? 'h-[700px]' : 'h-screen' }} relative">
-  <div class="ml-[50px] md:ml-[80px] h-full">
+  <div class="lg:ml-[80px] h-full">
     <div class="container-right h-full">
       <div class="relative z-10 flex items-center h-full pt-24">
         <div class="w-10/12 lg:w-[590px] pt-28 lenis-title">{!! $title !!}</div>

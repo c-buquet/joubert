@@ -1,12 +1,12 @@
 <section class="{{ $classes }} relative">
   <div class="scroll-content-slides">
-    <div class="ml-[50px] md:ml-[80px]">
-      <div class="flex">
-        <div class="title-custom bg-green-dark flex items-center justify-center w-5/12 px-4">
+    <div class="mx-auto lg:mx-0 lg:ml-[80px]">
+      <div id="content-desktop" class="hidden md:flex">
+        <div class="title-custom bg-green-dark flex items-center justify-center min-w-[300px] w-5/12 px-4">
           {!! $fields['title'] !!}
         </div>
 
-        <div class="big-content-slides flex relative ml-10 xl:ml-40 pt-40 pb-96 text-green-primary">
+        <div class="big-content-slides flex relative ml-10 xl:ml-40 pt-20 lg:pt-40 text-green-primary">
           @if ($fields['slides'])
             <div class="slides-container flex">
               @foreach ($fields['slides'] as $slide)
@@ -19,8 +19,8 @@
                     <img class="relative z-2" src="{{ $slide['image']['url'] }}" alt="{!! $slide['title'] !!}">
                     <div ></div>
                   </div>
-                  <div class="absolute w-7/12" style="white-space: normal;">
-                    <div class="big-surtitle opacity-80">0{!! $loop->index + 1 !!}</div>
+                  <div class="absolute w-1/2 lg:w-7/12" style="white-space: normal;">
+                    <div class="big-surtitle opacity-80 pb-1">0{!! $loop->index + 1 !!}</div>
                     <div class="title-mobile-h3 md:title-h3 pb-4">{!! $slide['title'] !!}</div>
                     <div class="p-medium">{!! $slide['text'] !!}</div>
                   </div>

@@ -1,8 +1,8 @@
 <div class="popup-entire-screen z-70 text-white-cloud" id-popup="{{ toKebabCase(''.$title.'') }}">
-  <div class="relative z-40 w-full h-12 md:h-20 border-b-2 border-white-cloud">
-    <div class="flex justify-between items-center h-full px-3 md:px-6">
+  <div class="relative z-40 w-full h-14 md:h-20 border-b-2 border-white-cloud">
+    <div class="flex justify-between items-center h-full px-3 md:px-5">
       <div class="flex">
-        <img class="w-6 md:w-auto h-fit" src="{{ assetImg('logo.svg') }}" alt="Remarquable!">
+        <img class="w-7 md:w-auto h-fit" src="{{ assetImg('logo.svg') }}" alt="Remarquable!">
       </div>
 
       <div class="bg-green-primary flex items-center cursor-pointer close-popup-entire-screen" id-close-popup="{{ toKebabCase(''.$title.'') }}">
@@ -12,7 +12,7 @@
   </div>
 
   <div class="pt-16">
-    <div class="ml-[50px] md:ml-[80px]">
+    <div class="lg:ml-[80px]">
       <div class="container-right scroll-content">
         <div class="w-10/12 content-popup text-lg" id="{{ toKebabCase(''.$title.'') }}">
           @if (!$isform)
@@ -34,5 +34,5 @@
     </div>
   </div>
 
-  <div class="w-[50px] md:w-[80px] h-full absolute left-0 top-0 z-30 bg-green-primary border-r-2 border-white-cloud"></div>
+  <div class="hidden lg:block w-[50px] md:w-[80px] h-full absolute left-0 top-0 z-30 bg-green-primary border-r-2 border-white-cloud"></div>
 </div>

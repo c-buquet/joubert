@@ -6,13 +6,13 @@
     <img src="{{ $footerDatas['logo'] }}" alt="Remarquable!">
   </div>
 
-  <div class="flex justify-between">
+  <div class="flex flex-row flex-wrap justify-between gap-x-4 gap-y-12">
     <div class="text-sm">
         {!! $footerDatas['slogan'] !!}
     </div>
 
     @if ($footerDatas['links_popup'])
-      <div class="flex flex-row gap-4">
+      <div class="flex flex-row flex-wrap md:flex-nowrap gap-4">
         @foreach ($footerDatas['links_popup'] as $linkPopup)
           <x-link-with-arrow title="{{ $linkPopup['link_title'] }}"></x-link-with-arrow>
         @endforeach
