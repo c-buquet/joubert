@@ -3,7 +3,7 @@
   session_cache_expire(30);
   session_start();
 
-  $_SESSION['disable_animations'] = isset($_SESSION['disable_animations']) ? 1 : 0;
+  $_SESSION['disable_animations'] = isset($_SESSION['disable_animations']) ? 0 : 0;
 ?>
 <html <?php language_attributes(); ?>>
   <head>

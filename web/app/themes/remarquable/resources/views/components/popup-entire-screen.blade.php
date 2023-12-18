@@ -16,7 +16,7 @@
       <div class="container-right scroll-content">
         <div class="w-10/12 content-popup text-lg" id="{{ toKebabCase(''.$title.'') }}">
           @if (!$isform)
-            <div class="">{!! $firstContent !!}</div>
+            <div class="text-base leading-loose">{!! $firstContent !!}</div>
             <div>
               @foreach ($contents as $content_popup)
                 <div class="pt-12">

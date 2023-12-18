@@ -20,6 +20,7 @@
                     <div ></div>
                   </div>
                   <div class="absolute w-7/12" style="white-space: normal;">
+                    <div class="big-surtitle opacity-80">0{!! $loop->index + 1 !!}</div>
                     <div class="title-mobile-h3 md:title-h3 pb-4">{!! $slide['title'] !!}</div>
                     <div class="p-medium">{!! $slide['text'] !!}</div>
                   </div>

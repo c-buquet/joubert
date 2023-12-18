@@ -18,22 +18,24 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Barre de défilement pour WebKit (Chrome, Safari, Edge) */
+/* Masquer la barre de défilement pour WebKit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 8px;
+  display: none; /* Masque la barre de défilement */
 }
 
-::-webkit-scrollbar-track {
-  background-color: theme('colors.green.primary'); /* Fond transparent */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: theme('colors.green.light'); /* Couleur de la barre de défilement */
-  border-radius: 4px; /* Coins arrondis de la barre de défilement */
-}
-
-/* Barre de défilement pour Firefox */
+/* Masquer la barre de défilement pour Firefox */
 * {
-  scrollbar-color: theme('colors.green.light') theme('colors.green.primary'); /* Couleur de la barre de défilement dans Firefox */
-  scrollbar-width: thin; /* Largeur de la barre de défilement dans Firefox */
+  scrollbar-width: none; /* Masque la barre de défilement dans Firefox */
 }
+
+/* Masquer la barre de défilement pour IE et Edge */
+html {
+  -ms-overflow-style: none; /* Masque la barre de défilement dans IE et Edge */
+}
+
+/* Masquer la barre de défilement mais conserver le défilement */
+body {
+  overflow: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Permet le défilement dans IE et Edge avec barre masquée */
+}
+

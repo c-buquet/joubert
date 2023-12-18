@@ -67,3 +67,15 @@
   line-height: 26px;
   font-weight: 400;
 }
+
+.big-surtitle{
+  font-family: 'Playfair Display';
+  font-size: 3rem;
+  line-height: normal;
+  font-weight: 600;
+
+  @screen md{
+    font-size: 3.875rem;
+    line-height: 76px;
+  }
+}
