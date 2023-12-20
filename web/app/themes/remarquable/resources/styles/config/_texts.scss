@@ -1,6 +1,6 @@
 .h1, h1 {
   font-family: 'Playfair Display';
-  font-size: 3rem;
+  font-size: 2.625rem;
   line-height: normal;
   font-weight: 400;
 
@@ -12,7 +12,7 @@
 
 .h2, h2 {
   font-family: 'Playfair Display';
-  font-size: 2.75rem;
+  font-size: 2rem;
   line-height: normal;
   font-weight: 400;
 
@@ -24,8 +24,8 @@
 
 .h3, h3 {
   font-family: 'Playfair Display';
-  font-size: 2.65rem;
-  line-height: normal;
+  font-size: 1.5rem;
+  line-height: 32px;
   font-weight: 600;
 
   @screen md{
@@ -36,9 +36,14 @@
 
 .h4, h4 {
   font-family: 'Playfair Display';
-  font-size: 2.375rem;
-  line-height: 52px;
+  font-size: 1.5rem;
+  line-height: 32px;
   font-weight: 400;
+
+  @screen md{
+    font-size: 2.375rem;
+    line-height: 52px;
+  }
 }
 
 .h5, h5 {
@@ -57,7 +62,7 @@
 
 .p-large{
   font-family: 'Lato', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 30px;
   font-weight: 400;
 }
@@ -70,7 +75,7 @@
 
 .big-surtitle{
   font-family: 'Playfair Display';
-  font-size: 3rem;
+  font-size: 3.125rem;
   line-height: normal;
   font-weight: 600;
 

@@ -34,4 +34,14 @@
       z-index: 1;
     }
   }
+
+  .text-quote{
+    font-family: 'Playfair Display';
+    font-size: 1.5rem;
+    font-weight: 400;
+    @screen lg{
+      font-size: 2.625rem;
+      font-weight: 400;
+    }
+  }
 }

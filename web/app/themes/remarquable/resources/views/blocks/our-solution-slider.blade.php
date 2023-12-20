@@ -1,7 +1,37 @@
+@php
+   $title_mobile = preg_replace('/<br\s*\/?>/i', ' ', $fields['title']);
+@endphp
 <section class="{{ $classes }} relative">
-  <div class="scroll-content-slides">
+  <div id="content-mobile" class="container-right pt-10 pb-14 text-green-primary md:hidden">
+    <div class="swiper swiper-our-solution md:hidden">
+      <div class="pb-9">
+        <h2>{!! $title_mobile !!}</h2>
+      </div>
+      <div class="swiper-wrapper">
+          @foreach ($fields['slides'] as $slide)
+              <div class="swiper-slide">
+                <div class="flex justify-center items-center mb-4 md:mb-10">
+                  <img class="relative z-2 max-h-[250px] w-full object-cover" src="{{ $slide['image']['url'] }}" alt="{!! $slide['title'] !!}">
+                </div>
+                <div class="flex flex-col">
+                  <div class="big-surtitle opacity-80 pb-1">0{!! $loop->index + 1 !!}</div>
+                  <div class="title-mobile-h3 md:title-h3 pb-4">{!! $slide['title'] !!}</div>
+                  <div class="p-medium">{!! $slide['text'] !!}</div>
+                </div>
+              </div>
+          @endforeach
+      </div>
+      <div class="mt-4 flex justify-end">
+        <div id="nextSlideOurSolution" class="cursor-pointer w-max">
+          <x-icons.mobile-arrow />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-desktop" class="scroll-content-slides hidden md:block">
     <div class="mx-auto lg:mx-0 lg:ml-[80px]">
-      <div id="content-desktop" class="hidden md:flex">
+      <div class="flex">
         <div class="title-custom bg-green-dark flex items-center justify-center min-w-[300px] w-5/12 px-4">
           {!! $fields['title'] !!}
         </div>

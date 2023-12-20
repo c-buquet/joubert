@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6556577a4e14f",
-            "label": "Hero Image",
+            "label": "Hero Image desktop",
             "name": "hero_image",
             "aria-label": "",
             "type": "image",
@@ -16,8 +16,9 @@
                 "class": "",
                 "id": ""
             },
+            "uploader": "",
             "return_format": "array",
-            "library": "all",
+            "acfe_thumbnail": 0,
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -26,8 +27,34 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_6581c4bed873a",
+            "label": "Hero image mobile",
+            "name": "hero_image_mobile",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "uploader": "",
-            "acfe_thumbnail": 0
+            "return_format": "array",
+            "acfe_thumbnail": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium",
+            "library": "all"
         },
         {
             "key": "field_655676e8af901",
@@ -75,5 +102,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1700349767
+    "modified": 1703003349
 }

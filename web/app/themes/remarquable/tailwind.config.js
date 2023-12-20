@@ -39,21 +39,25 @@ const titles = {
   },
   '.title-mobile-h1': {
     fontFamily: 'Playfair Display',
-    fontSize: "2.25rem",
-    lineHeight: "normal",
+    fontSize: '2.625rem',
     fontWeight: 400,
   },
   '.title-mobile-h2': {
     fontFamily: 'Playfair Display',
-    fontSize: "2rem",
-    lineHeight: "normal",
+    fontSize: '2.75rem',
     fontWeight: 400,
   },
   '.title-mobile-h3': {
     fontFamily: 'Playfair Display',
-    fontSize: "1.75rem",
-    lineHeight: "normal",
+    fontSize: '1.5rem',
+    lineHeight: '32px',
     fontWeight: 600,
+  },
+  '.title-mobile-h4': {
+    fontFamily: 'Playfair Display',
+    fontSize: '1.5rem',
+    lineHeight: '32px',
+    fontWeight: 400,
   },
 }
 
@@ -100,6 +104,7 @@ module.exports = {
       },
       backgroundImage: {
         'cards-filter': 'linear-gradient(180deg, rgba(1,54,58,0) 0%, rgba(1,54,58,1) 100%)',
+        'main-hero-filter': 'linear-gradient(90deg, rgba(0,39,41,0.6026611328125) 0%, rgba(0,39,41,0) 100%)',
       },
       colors: {
         'green': {

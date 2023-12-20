@@ -1,19 +1,19 @@
 <section class="{{ $classes }} bg-green-dark">
   <div class="lg:ml-[80px]">
       <div class="flex flex-col lg:flex-row">
-        <div class="h-full w-8/12 md:w-5/12 xl:w-1/3 mr-auto md:mx-auto lg:mr-0 lg:-ml-16">
-          <img class="" src="{{ $fields['image']['url'] }}" alt="{!! $fields['image']['title'] !!}">
+        <div class="h-full w-9/12 md:w-5/12 xl:w-1/3 mr-auto lg:mx-auto lg:mr-0 lg:-ml-16">
+          <img class="min-h-[400px] object-cover" src="{{ $fields['image']['url'] }}" alt="{!! $fields['image']['title'] !!}">
         </div>
-        <div class="flex flex-col justify-center pr-4 lg:pr-0 w-10/12 lg:w-5/12 ml-auto lg:mr-auto mt-12 lg:mt-0">
+        <div class="flex flex-col justify-center pr-4 lg:pr-0 w-10/12 lg:w-5/12 ml-auto lg:mr-auto mt-14 lg:mt-0">
           <div class="relative">
             <div class="absolute -top-6 lg:-top-16 -left-12 lg:-left-9 text-green-light">
               <x-icons.quotes />
             </div>
-            <div class="title-mobile-h1">{!! $fields['text'] !!}</div>
+            <div class="text-quote">{!! $fields['text'] !!}</div>
           </div>
 
           @if (isset($fields['linkedin']) && $fields['linkedin'])
-            <div class="flex flex-col md:flex-row gap-4 pt-14 md:items-center">
+            <div class="flex flex-col md:flex-row gap-4 pt-8 md:pt-14 md:items-center">
               <div class="text-sm font-medium tracking-wider uppercase">
                 {!! $fields['linkedin']['title'] !!}
               </div>

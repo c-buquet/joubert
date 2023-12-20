@@ -5,3 +5,4 @@ Swiper.use([Autoplay, Navigation, Mousewheel, Pagination, EffectFade])
 window.Swiper = Swiper
 
 require('./why-choose-us')
+require('./our-solution')
