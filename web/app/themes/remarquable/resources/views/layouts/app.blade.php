@@ -4,8 +4,8 @@
 
 @include('sections.header')
 
-<div id="loading" class="fixed block w-screen h-screen inset-0 bg-green-primary {{ $_SESSION['disable_animations'] ? "hidden" : "" }}">
-  <div id="loading-icon" class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-10/12 md:w-8/12 xl:w-1/2 z-10">
+<div id="loading" class="fixed block w-screen h-screen inset-0 bg-green-primary {{ $_SESSION['disable_animations'] ? "" : "" }}">
+  <div id="loading-icon" class="absolute left-1/2 top-[49%] sm:top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-10/12 md:w-8/12 xl:w-1/2 z-10">
   </div>
 </div>
 
