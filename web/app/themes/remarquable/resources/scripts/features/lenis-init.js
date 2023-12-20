@@ -42,14 +42,31 @@ if (window.location.href.indexOf("/wp") === -1) {
     }
   });
 
-  $(".scroll-content").on("wheel", function (event) {
-    // Récupérer l'élément .scroll-content
-    var scrollContent = $(this);
+    // Gestion de l'événement 'wheel' pour les écrans de plus de 768px
+    if (window.innerWidth > 768) {
+      $(".scroll-content").on("wheel", function(event) {
+          var scrollContent = $(this);
+          var currentScrollTop = scrollContent.scrollTop();
+          scrollContent.scrollTop(currentScrollTop + event.originalEvent.deltaY);
+      });
+  }
 
-    // Récupérer la valeur actuelle de la position de défilement
-    var currentScrollTop = scrollContent.scrollTop();
+  // Gestion de l'événement 'touchmove' pour les écrans de moins de 768px
+  else {
+      var startTouchY;
 
-    // Définir la nouvelle position de défilement en fonction de la direction de la molette
-    scrollContent.scrollTop(currentScrollTop + event.originalEvent.deltaY);
-  });
+      $(".scroll-content").on("touchstart", function(event) {
+          startTouchY = event.originalEvent.touches[0].clientY;
+      });
+
+      $(".scroll-content").on("touchmove", function(event) {
+          var touchY = event.originalEvent.touches[0].clientY;
+          var touchMoveDelta = startTouchY - touchY;
+          var scrollContent = $(this);
+          var currentScrollTop = scrollContent.scrollTop();
+
+          scrollContent.scrollTop(currentScrollTop + touchMoveDelta);
+          startTouchY = touchY; // Réinitialiser la position de départ du toucher
+      });
+  }
 }
