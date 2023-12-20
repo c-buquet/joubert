@@ -32,6 +32,14 @@
 }
 
 .icon-arrow-slide {
-  display: inline-block;
   animation: bounceRight 2.5s infinite;
+  @screen md{
+    display: inline-block;
+  }
+}
+
+@media (max-width: 767px) {
+  .icon-arrow-slide {
+      display: none !important;
+  }
 }
