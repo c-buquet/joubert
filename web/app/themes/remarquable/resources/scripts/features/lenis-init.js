@@ -30,14 +30,7 @@ if (window.location.href.indexOf("/wp") === -1) {
     0
   );
 
-  //MAIN POPUP PARAMS
-  $(".open-popup-entire-screen").click(function () {
-    lenis.stop();
-  });
 
-  $(".close-popup-entire-screen").click(function () {
-    lenis.start();
-  });
 
   $(".scroll-content").on("wheel", function (event) {
     // Récupérer l'élément .scroll-content
