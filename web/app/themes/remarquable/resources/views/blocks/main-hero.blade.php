@@ -3,10 +3,10 @@
     $hero_image_mobile = $fields['hero_image_mobile'] ?? null;
     $title = $fields['title'] ?? null;
 @endphp
-<section class="{{ $classes }} {{ is_admin() ? 'h-[700px]' : 'h-[750px] md:h-screen' }} relative" data-gsap>
+<section class="{{ $classes }} {{ is_admin() ? 'h-[700px]' : 'h-[740px] md:h-screen' }} relative" data-gsap>
   <div class="lg:ml-[80px] h-full">
     <div class="container-right h-full">
-      <div class="relative z-10 flex items-end md:items-center h-full pb-20 md:pb-0 pt-24">
+      <div class="relative z-10 flex items-end md:items-center h-full pb-32 md:pb-0 pt-24">
         <div class="w-10/12 lg:w-[590px] pt-28" data-anim data-from='{"autoAlpha":0, "duration": 1}' data-to='{"autoAlpha":1,"duration": 1.25}'>{!! $title !!}</div>
 
         <div class="w-full hidden md:flex justify-center absolute bottom-10 left-1/2 -translate-x-2/4">
