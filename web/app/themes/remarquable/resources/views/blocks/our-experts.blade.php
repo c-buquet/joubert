@@ -1,8 +1,10 @@
-<section class="{{ $classes }} bg-green-primary" data-gsap>
+<section class="{{ $classes }} bg-green-primary">
   <div class="lg:ml-[80px]">
     <div class="container-right">
-      <div class="pb-8 md:pb-24" data-anim data-from='{"z":-20,"x": -100,"autoAlpha":0}' data-to='{"x":0,"autoAlpha":1,"duration": 1.25}'>
-        {!! $fields['title_text'] !!}
+      <div class="pb-8 md:pb-24" data-gsap>
+        <span data-anim data-from='{"z":-20,"x": -100,"autoAlpha":0}' data-to='{"x":0,"autoAlpha":1,"duration": 1.25}'>
+          {!! $fields['title_text'] !!}
+        </span>
       </div>
 
       <div id="content-mobile" class="flex md:hidden flex-col md:flex-row gap-6">
@@ -24,7 +26,7 @@
         @endforeach
       </div>
 
-      <div id="content-desktop" class="hidden md:flex flex-col md:flex-row gap-6">
+      <div id="content-desktop" class="hidden md:flex flex-col md:flex-row gap-6" data-gsap>
         @foreach ($fields['cards'] as $card)
             <div class="w-full md:w-1/2 relative flex flex-col items-center justify-center group lg:min-h-[370px] max-h-[470px]" data-gsap
             data-anim data-from='{"autoAlpha":0}' data-to='{"autoAlpha":1,"duration": 2}'
