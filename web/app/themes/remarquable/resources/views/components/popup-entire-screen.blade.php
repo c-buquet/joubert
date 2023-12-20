@@ -14,13 +14,13 @@
   <div class="pt-16">
     <div class="lg:ml-[80px]">
       <div class="container-right scroll-content">
-        <div class="w-10/12 content-popup text-lg" id="{{ toKebabCase(''.$title.'') }}">
+        <div class="w-full md:w-10/12 content-popup text-lg" id="{{ toKebabCase(''.$title.'') }}">
           @if (!$isform)
             <div class="text-base leading-loose">{!! $firstContent !!}</div>
             <div>
               @foreach ($contents as $content_popup)
                 <div class="pt-12">
-                  <div class="text-xl font-semibold tracking-wider">{!! $content_popup['surtitle'] !!}</div>
+                  <div class="text-lg md:text-xl font-semibold tracking-wider">{!! $content_popup['surtitle'] !!}</div>
                   <div class="w-12 h-[2px] bg-white-cloud my-6"></div>
                   <div class="text-base leading-loose">{!! $content_popup['content'] !!}</div>
                 </div>
