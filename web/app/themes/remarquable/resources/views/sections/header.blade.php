@@ -3,7 +3,7 @@
 @endphp
 <header id="main-header" class="fixed w-full z-40 h-14 md:h-20 border-b-2 border-white-cloud">
   <div class="flex justify-between items-center h-full">
-    <div class="flex px-3 md:p-5 bg-green-primary h-full items-center">
+    <div class="flex px-3 md:p-5 bg-green-primary h-full items-center border-r-2 lg:border-r-0">
       <a href="/" title="Home">
         <img class="w-7 md:w-auto h-fit" src="{{ assetImg('logo.svg') }}" alt="Remarquable!">
       </a>

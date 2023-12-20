@@ -11,12 +11,12 @@
         </div>
         <div class="flex flex-row flex-wrap justify-center items-center gap-7 w-full md:w-auto" data-gsap>
           <div class="cursor-pointer open-popup-entire-screen w-full lg:w-auto" data-id="contact-us"
-          data-anim data-position="0.25" data-from='{"z":-20,"y": 100,"autoAlpha":0}' data-to='{"y":0,"autoAlpha":1,"duration": 1.25}'
+          data-anim data-position="0.25" data-from='{"z":-20,"y": 30,"autoAlpha":0}' data-to='{"y":0,"autoAlpha":1,"duration": 1.25}'
           >
             <x-button>Contact us</x-button>
           </div>
           <a class="w-full lg:w-auto" href="{{ $fields['button']['url'] }}" title="{!! $fields['button']['title'] !!}" target="{{ $fields['button']['target'] }}"
-          data-anim data-position="0.5" data-from='{"z":-20,"y": 100,"autoAlpha":0}' data-to='{"y":0,"autoAlpha":1,"duration": 1.25}'
+          data-anim data-position="0.5" data-from='{"z":-20,"y": 30,"autoAlpha":0}' data-to='{"y":0,"autoAlpha":1,"duration": 1.25}'
           >
             <x-button type="secondary" color="white">{!! $fields['button']['title'] !!}</x-button>
           </a>
