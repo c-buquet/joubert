@@ -3,7 +3,7 @@
     $hero_image_mobile = $fields['hero_image_mobile'] ?? null;
     $title = $fields['title'] ?? null;
 @endphp
-<section class="{{ $classes }} {{ is_admin() ? 'h-[700px]' : 'h-[700px] md:h-screen' }} relative" data-gsap>
+<section class="{{ $classes }} {{ is_admin() ? 'h-[700px]' : 'h-[750px] md:h-screen' }} relative" data-gsap>
   <div class="lg:ml-[80px] h-full">
     <div class="container-right h-full">
       <div class="relative z-10 flex items-end md:items-center h-full pb-6 md:pb-0 pt-24">
