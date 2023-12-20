@@ -1,6 +1,7 @@
 import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 if (window.innerWidth > 768) {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -32,15 +33,11 @@ if (window.innerWidth > 768) {
 
     //MAIN POPUP PARAMS
     $(".open-popup-entire-screen").click(function () {
-      if (window.innerWidth > 1024) {
-        lenis.stop();
-      }
+      lenis.stop();
     });
 
     $(".close-popup-entire-screen").click(function () {
-      if (window.innerWidth > 1024) {
-        lenis.start();
-      }
+      lenis.start();
     });
 
     $(".scroll-content").on("wheel", function (event) {
@@ -54,4 +51,12 @@ if (window.innerWidth > 768) {
       scrollContent.scrollTop(currentScrollTop + event.originalEvent.deltaY);
     });
   }
+} else {
+  $(".open-popup-entire-screen").click(function () {
+    $("body").toggleClass("overflow-hidden");
+  });
+
+  $(".close-popup-entire-screen").click(function () {
+    $("body").toggleClass("overflow-hidden");
+  });
 }
