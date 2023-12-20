@@ -20,17 +20,23 @@ html.lenis {
 
 /* Masquer la barre de défilement pour WebKit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  display: none; /* Masque la barre de défilement */
+  @screen md{
+    display: none; /* Masque la barre de défilement */
+  }
 }
 
 /* Masquer la barre de défilement pour Firefox */
 * {
-  scrollbar-width: none; /* Masque la barre de défilement dans Firefox */
+  @screen md{
+    scrollbar-width: none; /* Masque la barre de défilement dans Firefox */
+  }
 }
 
 /* Masquer la barre de défilement pour IE et Edge */
 html {
-  -ms-overflow-style: none; /* Masque la barre de défilement dans IE et Edge */
+  @screen md{
+    -ms-overflow-style: none; /* Masque la barre de défilement dans IE et Edge */
+  }
 }
 
 /* Masquer la barre de défilement mais conserver le défilement */
