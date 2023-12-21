@@ -58,7 +58,3 @@ function checkScrollEnd() {
 $(".scroll-content-slides").on("scroll", function() {
   checkScrollEnd();
 });
-
-// Initialiser une fois au chargement de la page
-checkScrollEnd();
-

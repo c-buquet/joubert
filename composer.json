@@ -75,7 +75,9 @@
     "wpackagist-plugin/duplicate-page": "^4.4",
     "wpackagist-plugin/reusable-blocks-extended": "^0.9.0",
     "wpackagist-plugin/folders": "^2.9",
-    "wpackagist-plugin/acf-extended": "0.8.9.5"
+    "wpackagist-plugin/acf-extended": "0.8.9.5",
+    "wpackagist-plugin/cookiebot": "^4.3",
+    "wpackagist-plugin/wp-mail-smtp": "^3.11"
   },
   "config": {
     "optimize-autoloader": true,
