@@ -1,6 +1,6 @@
-import Swiper, {Autoplay, Navigation, Mousewheel, Pagination, EffectFade} from "swiper/bundle";
+import Swiper from "swiper/bundle";
 
-Swiper.use([Autoplay, Navigation, Mousewheel, Pagination, EffectFade])
+Swiper.use()
 
 window.Swiper = Swiper
 
