@@ -77,7 +77,8 @@
     "wpackagist-plugin/folders": "^2.9",
     "wpackagist-plugin/acf-extended": "0.8.9.5",
     "wpackagist-plugin/cookiebot": "^4.3",
-    "wpackagist-plugin/wp-mail-smtp": "^3.11"
+    "wpackagist-plugin/wp-mail-smtp": "^3.11",
+    "wpackagist-plugin/axeptio-sdk-integration": "^2.3"
   },
   "config": {
     "optimize-autoloader": true,
