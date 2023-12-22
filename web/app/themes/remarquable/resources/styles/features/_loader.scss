@@ -1,3 +1,11 @@
 #loading {
-  z-index: 1000;
+  z-index: 2147483648;
+  position: fixed;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
+  #loading-icon{
+    z-index: 2147483649;
+  }
 }
