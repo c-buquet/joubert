@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9436b2890b701cb78a5f9cdffd48c9bd",
+    "content-hash": "9815b50f941cfc6f224f5319066c70c6",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -5111,10 +5111,10 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields-pro",
-            "version": "6.2.3",
+            "version": "6.2.4",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/index.php?v=6.2.3&p=pro&a=download&k=b3JkZXJfaWQ9MTQwNDIwfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wOS0yMSAxNTowMzowOA=="
+                "url": "https://connect.advancedcustomfields.com/index.php?v=6.2.4&p=pro&a=download&k=b3JkZXJfaWQ9MTQwNDIwfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wOS0yMSAxNTowMzowOA=="
             },
             "type": "wordpress-plugin"
         },
@@ -5155,24 +5155,6 @@
             "homepage": "https://wordpress.org/plugins/breadcrumb-navxt/"
         },
         {
-            "name": "wpackagist-plugin/cookiebot",
-            "version": "4.3.4",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/cookiebot/",
-                "reference": "tags/4.3.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookiebot.4.3.4.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/cookiebot/"
-        },
-        {
             "name": "wpackagist-plugin/duplicate-page",
             "version": "4.5.3",
             "source": {
@@ -5210,15 +5192,15 @@
         },
         {
             "name": "wpackagist-plugin/folders",
-            "version": "2.9.8",
+            "version": "3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/folders/",
-                "reference": "tags/2.9.8"
+                "reference": "tags/3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/folders.2.9.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/folders.3.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -5228,15 +5210,15 @@
         },
         {
             "name": "wpackagist-plugin/formidable",
-            "version": "6.6",
+            "version": "6.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/formidable/",
-                "reference": "tags/6.6"
+                "reference": "tags/6.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/formidable.6.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/formidable.6.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
