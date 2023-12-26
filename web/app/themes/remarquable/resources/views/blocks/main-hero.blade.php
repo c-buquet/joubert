@@ -6,7 +6,7 @@
 <section class="{{ $classes }} {{ is_admin() ? 'h-[700px]' : 'h-[740px] md:h-screen' }} relative" data-gsap>
   <div class="lg:ml-[80px] h-full">
     <div class="container-right h-full">
-      <div class="relative z-10 flex items-end h-full pb-20 md:pb-16 pt-24">
+      <div class="relative z-10 flex items-end h-full pb-20 md:pb-56 lg:pb-16 pt-24">
         <div class="w-10/12 lg:w-[590px] pt-28 lenis-title" data-anim data-from='{"autoAlpha":0, "duration": 1}' data-to='{"autoAlpha":1,"duration": 1.25}'>{!! $title !!}</div>
 
         <div class="w-full hidden md:flex justify-center absolute bottom-10 left-1/2 -translate-x-2/4">

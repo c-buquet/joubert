@@ -2,7 +2,7 @@ import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-if (window.innerWidth > 768) {
+if (window.innerWidth > 1024) {
   gsap.registerPlugin(ScrollTrigger);
 
   //active le js seulement en front-end !
