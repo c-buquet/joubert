@@ -7,3 +7,6 @@
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 require_once dirname(__DIR__) . '/config/application.php';
 require_once ABSPATH . 'wp-settings.php';
+
+define('DISALLOW_FILE_EDIT', false);
+define('DISALLOW_FILE_MODS', false);
