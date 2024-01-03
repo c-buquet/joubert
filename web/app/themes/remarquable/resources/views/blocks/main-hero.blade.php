@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <img class="hidden sm:block w-full h-full object-cover object-right-bottom md:object-right absolute top-0 left-0" src="{{ $hero_image['url'] }}" alt="{!! $hero_image['title'] !!}">
-  <img class="sm:hidden w-full h-full object-cover object-right-bottom md:object-right absolute top-0 left-0" src="{{ $hero_image_mobile['url'] }}" alt="{!! $hero_image_mobile['title'] !!}">
+  <img class="hidden sm:block w-full h-full object-cover object-right-bottom md:object-right absolute top-0 left-0" src="{{ $hero_image['url'] ?? '' }}" alt="{!! $hero_image['title'] ?? 'manque une image' !!}">
+  <img class="sm:hidden w-full h-full object-cover object-right-bottom md:object-right absolute top-0 left-0" src="{{ $hero_image_mobile['url'] ?? '' }}" alt="{!! $hero_image_mobile['title'] ?? 'manque une image' !!}">
   <div class="bg-main-hero-filter w-full h-full absolute top-0 left-0"></div>
 </section>

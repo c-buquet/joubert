@@ -2,7 +2,14 @@ import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-if (window.innerWidth > 1024) {
+const iOS = () => {
+  if (typeof window === `undefined` || typeof navigator === `undefined`) return false;
+
+  return /iPhone|iPad|iPod/i.test(navigator.userAgent || navigator.vendor || (window.opera && opera.toString() === `[object Opera]`));
+};
+console.log(iOS())
+
+if (!iOS()) {
   gsap.registerPlugin(ScrollTrigger);
 
   //active le js seulement en front-end !
