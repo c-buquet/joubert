@@ -9,7 +9,7 @@ const iOS = () => {
 };
 console.log(iOS())
 
-if (window.innerWidth > 768 && !iOS()) {
+if (!iOS()) {
   gsap.registerPlugin(ScrollTrigger);
 
   //active le js seulement en front-end !
@@ -38,14 +38,7 @@ if (window.innerWidth > 768 && !iOS()) {
       0
     ).fromTo(".main-hero .lenis-title", { y: "-25%" }, { y: "-45%" }, 0);
 
-    //MAIN POPUP PARAMS
-    $(".open-popup-entire-screen").click(function () {
-      lenis.stop();
-    });
 
-    $(".close-popup-entire-screen").click(function () {
-      lenis.start();
-    });
 
     $("#open-popup-feat-work").click(function () {
       lenis.stop();
