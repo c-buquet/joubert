@@ -9,7 +9,7 @@ const iOS = () => {
 };
 console.log(iOS())
 
-if (!iOS()) {
+if (window.innerWidth > 768 && !iOS()) {
   gsap.registerPlugin(ScrollTrigger);
 
   //active le js seulement en front-end !

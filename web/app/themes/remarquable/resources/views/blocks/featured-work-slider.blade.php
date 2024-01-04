@@ -1,8 +1,8 @@
 <section class="{{ $classes }}">
-  <div class="block md:hidden relative h-full">
+  <div class="block md:hidden relative h-full" data-gsap>
     <img class="absolute top-0 left-0 w-full h-full object-cover bg-[left_2rem]" src="{{ $fields['main_bg']['url'] }}" alt="main-bg">
 
-    <div class="lg:ml-[80px] relative h-full">
+    <div class="lg:ml-[80px] relative h-full" data-anim data-from='{"autoAlpha":0}' data-to='{"autoAlpha":1,"duration": 2}'>
       <div class="container-right h-full">
         <div class="flex flex-col py-24 gap-5 h-full">
           <div class="">
@@ -15,13 +15,13 @@
         </div>
       </div>
 
-      <div id="open-popup-feat-work" class="absolute bottom-8 right-6 cursor-pointer text-white-cloud">
+      <div id="open-popup-feat-work" class="absolute bottom-8 right-6 anim-slider-arrows cursor-pointer text-white-cloud">
         <x-icons.mobile-arrow />
       </div>
     </div>
   </div>
 
-  <div class="hidden md:block">
+  <div class="hidden md:block" data-gsap>
     <div class="swiper swiper-featured-work">
       <div class="swiper-wrapper">
 
@@ -31,7 +31,7 @@
             <img class="absolute top-0 left-0 w-full h-full object-cover" src="{{ $fields['main_bg']['url'] }}" alt="main-bg">
 
             <div class="lg:ml-[80px] h-full">
-              <div class="container-right h-full relative">
+              <div class="container-right h-full relative" data-anim data-from='{"autoAlpha":0}' data-to='{"autoAlpha":1,"duration": 2}'>
                 <div class="w-full xl:w-10/12 mx-auto flex flex-row py-32 items-center justify-between h-full">
                   <div class="">
                     <div class="text-green-primary">{!! $fields['title'] !!}</div>
@@ -42,7 +42,7 @@
                   </div>
                 </div>
 
-                <div data-id="nextSlideFeaturedWork" class="absolute bottom-20 right-4 cursor-pointer text-white-cloud">
+                <div data-id="nextSlideFeaturedWork" class="absolute bottom-20 right-4 anim-slider-arrows cursor-pointer text-white-cloud">
                   <x-icons.big-arrow />
                 </div>
               </div>
@@ -63,7 +63,7 @@
                 </div>
               </div>
 
-              <div data-id="nextSlideFeaturedWork" class="absolute bottom-20 right-4 cursor-pointer text-white-cloud">
+              <div data-id="nextSlideFeaturedWork" class="absolute bottom-20 right-4 anim-slider-arrows cursor-pointer text-white-cloud">
                 <x-icons.big-arrow />
               </div>
             </div>

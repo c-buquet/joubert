@@ -43,3 +43,10 @@
       display: none !important;
   }
 }
+
+.anim-slider-arrows {
+  animation: bounceRight 2.5s infinite;
+  @screen md{
+    display: inline-block;
+  }
+}
