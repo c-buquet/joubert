@@ -38,7 +38,15 @@ if (!iOS()) {
       0
     ).fromTo(".main-hero .lenis-title", { y: "-25%" }, { y: "-45%" }, 0);
 
+    //MAIN POPUP PARAMS
+    /* TEST WHITHOUT LENIS STOP ON OPENED POPUP
+    $(".open-popup-entire-screen").click(function () {
+      lenis.stop();
+    });
 
+    $(".close-popup-entire-screen").click(function () {
+      lenis.start();
+    });
 
     $("#open-popup-feat-work").click(function () {
       lenis.stop();
@@ -46,7 +54,7 @@ if (!iOS()) {
 
     $("#close-popup-feat-work").click(function () {
       lenis.start();
-    });
+    });*/
 
     $(".scroll-content").on("wheel", function (event) {
       // Récupérer l'élément .scroll-content
