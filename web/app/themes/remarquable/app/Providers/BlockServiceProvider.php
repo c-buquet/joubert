@@ -11,6 +11,7 @@ use App\Blocks\Presentation;
 use App\Blocks\ImageCorner;
 use App\Blocks\OurExperts;
 use App\Blocks\OurSolutionSlider;
+use App\Blocks\HomePosts;
 use Roots\Acorn\ServiceProvider;
 
 class BlockServiceProvider extends ServiceProvider
@@ -41,5 +42,6 @@ class BlockServiceProvider extends ServiceProvider
         (new ImageCorner());
         (new OurExperts());
         (new OurSolutionSlider());
+        (new HomePosts());
     }
 }

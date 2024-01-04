@@ -4,7 +4,7 @@
 
 @include('sections.header')
 
-<div id="loading" class="bg-green-primary {{ $_SESSION['disable_animations'] ? "" : "" }}">
+<div id="loading" class="bg-green-primary {{ $_SESSION['disable_animations'] ? "hidden" : "block" }}">
   <div id="loading-icon" class="absolute left-1/2 top-[43%] sm:top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full md:w-8/12 xl:w-1/2">
   </div>
 </div>

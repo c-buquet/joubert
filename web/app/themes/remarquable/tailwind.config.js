@@ -104,6 +104,8 @@ module.exports = {
       },
       backgroundImage: {
         'cards-filter': 'linear-gradient(180deg, rgba(1,54,58,0) 0%, rgba(1,54,58,1) 100%)',
+        'cards-filter-right': 'linear-gradient(70deg, rgba(1,54,58,0) 0%, rgba(1,54,58,0.7) 100%)',
+        'cards-filter-left': 'linear-gradient(270deg, rgba(1,54,58,0) 0%, rgba(1,54,58,0.7) 100%)',
         'main-hero-filter': 'linear-gradient(90deg, rgba(0,39,41,0.6026611328125) 0%, rgba(0,39,41,0) 100%)',
       },
       colors: {
