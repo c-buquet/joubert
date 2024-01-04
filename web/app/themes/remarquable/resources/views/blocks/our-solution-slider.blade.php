@@ -22,7 +22,7 @@
           @endforeach
       </div>
       <div class="mt-4 flex justify-end">
-        <div id="nextSlideOurSolution" class="cursor-pointer w-max">
+        <div id="nextSlideOurSolution" class="cursor-pointer w-max text-green-primary">
           <x-icons.mobile-arrow />
         </div>
       </div>
@@ -64,7 +64,7 @@
       </div>
     </div>
   </div>
-  <div class="absolute bottom-20 right-20 icon-arrow-slide cursor-pointer">
+  <div class="absolute bottom-20 right-20 icon-arrow-slide cursor-pointer text-green-primary">
     <x-icons.big-arrow />
   </div>
 </section>

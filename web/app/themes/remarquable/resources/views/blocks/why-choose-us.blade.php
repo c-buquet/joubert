@@ -33,7 +33,7 @@
               @endforeach
           </div>
           <div class="mt-10 flex justify-end">
-            <div id="nextSlideChooseUs" class="cursor-pointer w-max">
+            <div id="nextSlideChooseUs" class="cursor-pointer w-max text-green-primary">
               <x-icons.mobile-arrow />
             </div>
           </div>

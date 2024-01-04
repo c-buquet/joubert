@@ -47,6 +47,14 @@ if (!iOS()) {
       lenis.start();
     });
 
+    $("#open-popup-feat-work").click(function () {
+      lenis.stop();
+    });
+
+    $("#close-popup-feat-work").click(function () {
+      lenis.start();
+    });
+
     $(".scroll-content").on("wheel", function (event) {
       // Récupérer l'élément .scroll-content
       var scrollContent = $(this);
@@ -64,6 +72,14 @@ if (!iOS()) {
   });
 
   $(".close-popup-entire-screen").click(function () {
+    $("body").toggleClass("overflow-hidden");
+  });
+
+  $("#open-popup-feat-work").click(function () {
+    $("body").toggleClass("overflow-hidden");
+  });
+
+  $("#close-popup-feat-work").click(function () {
     $("body").toggleClass("overflow-hidden");
   });
 }

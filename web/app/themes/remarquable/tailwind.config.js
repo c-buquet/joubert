@@ -107,6 +107,7 @@ module.exports = {
         'cards-filter-right': 'linear-gradient(70deg, rgba(1,54,58,0) 0%, rgba(1,54,58,0.7) 100%)',
         'cards-filter-left': 'linear-gradient(270deg, rgba(1,54,58,0) 0%, rgba(1,54,58,0.7) 100%)',
         'main-hero-filter': 'linear-gradient(90deg, rgba(0,39,41,0.6026611328125) 0%, rgba(0,39,41,0) 100%)',
+        'featured-work': 'linear-gradient(65.61deg, #021723 6.85%, #001F31 81.19%)',
       },
       colors: {
         'green': {
@@ -115,10 +116,11 @@ module.exports = {
           'lightest' : '#DFE9EA',
           'dark' : '#003235',
           'paragraph' : '#345F62',
+          'feat-work-continue': 'rgba(0, 31, 49, 1)',
         },
         'white': {
           'cloud' : '#FBFBFB',
-        }
+        },
       },
       typography: (theme) => ({
         DEFAULT: {

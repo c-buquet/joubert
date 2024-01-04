@@ -2,7 +2,7 @@
   <div class="lg:ml-[80px]">
     <div class="container-right">
       <div class="pb-8 md:pb-16" data-gsap>
-        <span data-anim data-from='{"z":-20,"x": -100,"autoAlpha":0}' data-to='{"x":0,"autoAlpha":1,"duration": 1.25}'>
+        <span data-anim data-position="0" data-from='{"z":-20,"x": -100,"autoAlpha":0}' data-to='{"x":0,"autoAlpha":1,"duration": 1.25}'>
           {!! $fields['title'] !!}
         </span>
       </div>
@@ -15,7 +15,7 @@
                 <div class="absolute top-0 left-0 w-full h-full {{ $loop->even ? 'bg-cards-filter-left' : 'bg-cards-filter-right' }}"></div>
               </div>
 
-              <a href="{{ get_the_permalink($card->ID) }}" title="{!! get_the_title($card->ID) !!}" class="mt-6 hover:opacity-70 duration-500" data-anim data-position="0.4" data-from='{"autoAlpha":0}' data-to='{"autoAlpha":1,"duration": 1.5}'>
+              <a href="{{ get_the_permalink($card->ID) }}" title="{!! get_the_title($card->ID) !!}" class="mt-6 hover:opacity-70 duration-500">
                 <div class="font-medium text-lg tracking-wide uppercase">{!! get_the_title($card->ID) !!}</div>
                 <div class="text-sm mt-2">{!! get_the_date('d F Y', $card->ID) !!}</div>
               </a>
