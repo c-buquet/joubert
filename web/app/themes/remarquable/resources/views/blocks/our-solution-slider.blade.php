@@ -22,7 +22,7 @@
           @endforeach
       </div>
       <div class="mt-4 flex justify-end">
-        <div id="nextSlideOurSolution" class="cursor-pointer w-max text-green-primary">
+        <div id="nextSlideOurSolution" class="cursor-pointer w-max text-green-primary anim-slider-arrows">
           <x-icons.mobile-arrow />
         </div>
       </div>
