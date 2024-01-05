@@ -23,11 +23,11 @@
             "delay": 0
         },
         {
-            "key": "field_6596ad97692a1",
-            "label": "Cards",
+            "key": "field_659828fdccacb",
+            "label": "Cartes",
             "name": "cards",
             "aria-label": "",
-            "type": "relationship",
+            "type": "repeater",
             "instructions": "(Obligatoire)",
             "required": 1,
             "conditional_logic": 0,
@@ -36,27 +36,80 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "post"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
-            ],
-            "return_format": "object",
-            "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": "0"
-            },
+            "acfe_repeater_stylised_button": 0,
+            "layout": "row",
+            "pagination": 0,
             "min": 1,
-            "max": "",
-            "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Ajouter un élément",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_65982932ccacf",
+                    "label": "Titre et lien de l'article",
+                    "name": "title_n_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "(Obligatoire)",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_659828fdccacb"
+                },
+                {
+                    "key": "field_6598290accacc",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "(Obligatoire)",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "",
+                    "return_format": "array",
+                    "acfe_thumbnail": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "parent_repeater": "field_659828fdccacb"
+                },
+                {
+                    "key": "field_6598291fccace",
+                    "label": "Date",
+                    "name": "date",
+                    "aria-label": "",
+                    "type": "date_picker",
+                    "instructions": "(Obligatoire)",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1,
+                    "parent_repeater": "field_659828fdccacb"
+                }
+            ]
         }
     ],
     "location": [
@@ -84,5 +137,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1704374047
+    "modified": 1704471113
 }
