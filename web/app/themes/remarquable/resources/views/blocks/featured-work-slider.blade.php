@@ -59,7 +59,7 @@
                   {!! $fields['contenu'] !!}
                 </div>
                 <div class="w-8/12 lg:w-5/12">
-                  <img class="object-contain max-h-[600px]" src="{{ $fields['right_image']['url'] }}" alt="">
+                  <img class="object-contain max-h-[600px]" src="{{ $fields['right_image']['url'] }}" alt="right_image">
                 </div>
               </div>
 
@@ -76,10 +76,10 @@
             <div class="container-right h-full">
               <div class="flex flex-col lg:flex-row py-32 px-6 items-center justify-between h-full gap-4">
                 <div class="w-8/12 lg:w-7/12">
-                  <img class="object-contain max-h-[600px]" src="{{ $fields['left_second_image']['url'] }}" alt="">
+                  <img class="object-contain max-h-[600px]" src="{{ $fields['left_second_image']['url'] }}" alt="left_second_image">
                 </div>
                 <div class="w-8/12 lg:w-5/12">
-                  <img class="object-contain max-h-[600px]" src="{{ $fields['right_second_image']['url'] }}" alt="">
+                  <img class="object-contain max-h-[600px]" src="{{ $fields['right_second_image']['url'] }}" alt="right_second_image">
                 </div>
               </div>
             </div>
@@ -115,13 +115,13 @@
                 {!! $fields['contenu'] !!}
               </div>
               <div class="w-full">
-                <img class="object-contain max-h-[600px]" src="{{ $fields['right_image']['url'] }}" alt="">
+                <img class="object-contain max-h-[600px]" src="{{ $fields['right_image']['url'] }}" alt="right_image">
               </div>
               <div class="w-full">
-                <img class="object-contain max-h-[600px]" src="{{ $fields['left_second_image']['url'] }}" alt="">
+                <img class="object-contain max-h-[600px]" src="{{ $fields['left_second_image']['url'] }}" alt="left_second_image">
               </div>
               <div class="w-fumm">
-                <img class="object-contain max-h-[600px]" src="{{ $fields['right_second_image']['url'] }}" alt="">
+                <img class="object-contain max-h-[600px]" src="{{ $fields['right_second_image']['url'] }}" alt="right_second_image">
               </div>
             </div>
           </div>
