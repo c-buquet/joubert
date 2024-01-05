@@ -6,6 +6,7 @@ var SwiperFeaturedWork = new Swiper('.swiper-featured-work', {
   spaceBetween: 0,
   freeMode: true,
   grabCursor: true,
+  speed: 100,
 });
 
 let buttons = document.querySelectorAll('[data-id="nextSlideFeaturedWork"]');
