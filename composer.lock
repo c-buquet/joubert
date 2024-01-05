@@ -5210,15 +5210,15 @@
         },
         {
             "name": "wpackagist-plugin/formidable",
-            "version": "6.7.1",
+            "version": "6.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/formidable/",
-                "reference": "tags/6.7.1"
+                "reference": "tags/6.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/formidable.6.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/formidable.6.7.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -5336,15 +5336,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-nested-pages",
-            "version": "3.2.6",
+            "version": "3.2.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-nested-pages/",
-                "reference": "tags/3.2.6"
+                "reference": "tags/3.2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-nested-pages.3.2.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-nested-pages.3.2.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
