@@ -5,19 +5,25 @@
     <div class="lg:ml-[80px] relative h-full" data-anim data-from='{"autoAlpha":0}' data-to='{"autoAlpha":1,"duration": 2}'>
       <div class="container-right h-full">
         <div class="flex flex-col py-24 gap-5 h-full">
-          <div class="">
-            <div class="text-green-primary">{!! $fields['title'] !!}</div>
-            <div class="surtitle-primary pt-2">{!! $fields['subtitle'] !!}</div>
+          <div class="flex flex-row justify-between items-center gap-6">
+            <div class="">
+              <div class="text-green-primary">{!! $fields['title'] !!}</div>
+              <div class="surtitle-primary pt-2">{!! $fields['subtitle'] !!}</div>
+            </div>
+
+            <div id="open-popup-feat-work" class="cursor-pointer text-white-cloud">
+              <span class="font-playfair text-xs">Open</span>
+              <img class="w-12 mt-1" src="{{ assetImg('icons/menu-burger-base.svg') }}" alt="Open Slider">
+            </div>
           </div>
+
           <div class="flex justify-center w-full">
             <img class="max-h-[447px]" src="{{ $fields['right_title_image']['url'] }}" alt="right_title_image">
           </div>
         </div>
       </div>
 
-      <div id="open-popup-feat-work" class="absolute bottom-8 right-6 anim-slider-arrows cursor-pointer text-white-cloud">
-        <x-icons.mobile-arrow />
-      </div>
+
     </div>
   </div>
 

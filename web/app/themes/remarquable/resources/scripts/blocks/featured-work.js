@@ -13,7 +13,16 @@ let buttons = document.querySelectorAll('[data-id="nextSlideFeaturedWork"]');
 
 buttons.forEach(function(button) {
   button.addEventListener('click', function() {
-    SwiperFeaturedWork.slideNext();
+    // Calculez l'index de la prochaine diapositive
+    let nextSlideIndex = SwiperFeaturedWork.activeIndex + 1;
+
+    // Assurez-vous de ne pas dépasser le nombre total de diapositives
+    if (nextSlideIndex >= SwiperFeaturedWork.slides.length) {
+      nextSlideIndex = 0; // ou vous pouvez choisir de ne pas boucler
+    }
+
+    // Transition vers la diapositive suivante avec un contrôle de vitesse personnalisé
+    SwiperFeaturedWork.slideTo(nextSlideIndex, 700); // 500 est la durée en millisecondes
   });
 });
 
