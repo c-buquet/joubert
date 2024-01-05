@@ -25,10 +25,10 @@
                   <div class="absolute top-0 left-0 w-full h-full z-10 bg-green-primary bg-opacity-0 group-hover:bg-opacity-70 duration-500"></div>
                 </a>
 
-                <div class="mt-4">
+                <a href="{{ $card['title_n_link']['url'] }}" title="{!! $card['title_n_link']['title'] !!}" target="{{ $card['title_n_link']['target'] }}" class="mt-4 hover:opacity-70 duration-500">
                   <div class="font-medium text-lg tracking-wide uppercase">{!! $card['title_n_link']['title'] !!}</div>
                   <div class="text-sm mt-2">{!! $card['date'] !!}</div>
-                </div>
+                </a>
               </div>
           @endforeach
         </div>
