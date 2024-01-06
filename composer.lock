@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b19407344c1e017a4cf803d12dc38c6c",
+    "content-hash": "20647a6ef74ee085139ae7bdcc1fb443",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -5135,24 +5135,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/axeptio-sdk-integration/"
-        },
-        {
-            "name": "wpackagist-plugin/breadcrumb-navxt",
-            "version": "7.2.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/breadcrumb-navxt/",
-                "reference": "tags/7.2.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/breadcrumb-navxt.7.2.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/breadcrumb-navxt/"
         },
         {
             "name": "wpackagist-plugin/duplicate-page",

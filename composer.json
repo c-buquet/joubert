@@ -67,7 +67,6 @@
     "wpackagist-plugin/svg-support": "^2.4",
     "wpackagist-plugin/flexible-spacer-block": "^2.2",
     "wpackagist-plugin/wp-nested-pages": "^3.2",
-    "wpackagist-plugin/breadcrumb-navxt": "^7.0",
     "wpackagist-plugin/wordpress-seo": "^21.5",
     "wpackagist-plugin/resizable-editor-sidebar": "^1.0",
     "wpackagist-plugin/formidable": "^6.7",
