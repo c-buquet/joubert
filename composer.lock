@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb8f5ed159bec7176a4d3bd2bd14b7f8",
+    "content-hash": "b19407344c1e017a4cf803d12dc38c6c",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -5225,24 +5225,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/formidable/"
-        },
-        {
-            "name": "wpackagist-plugin/redirection",
-            "version": "5.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/5.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.5.5.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/resizable-editor-sidebar",
