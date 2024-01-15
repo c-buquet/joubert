@@ -7,9 +7,15 @@ const iOS = () => {
 
   return /iPhone|iPad|iPod/i.test(navigator.userAgent || navigator.vendor || (window.opera && opera.toString() === `[object Opera]`));
 };
-console.log(iOS())
+//console.log(iOS())
 
-if (!iOS()) {
+function isNotSafari() {
+  return navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
+}
+
+
+if (!iOS() && !isNotSafari()) {
+  console.log("Lenis is executed")
   gsap.registerPlugin(ScrollTrigger);
 
   //active le js seulement en front-end !
