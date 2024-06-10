@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20647a6ef74ee085139ae7bdcc1fb443",
+    "content-hash": "148e874cf4e26c8ca82502e99dfc5051",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -5119,24 +5119,6 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "wpackagist-plugin/axeptio-sdk-integration",
-            "version": "2.3.3",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/axeptio-sdk-integration/",
-                "reference": "tags/2.3.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/axeptio-sdk-integration.2.3.3.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/axeptio-sdk-integration/"
-        },
-        {
             "name": "wpackagist-plugin/duplicate-page",
             "version": "4.5.3",
             "source": {
@@ -5153,24 +5135,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/duplicate-page/"
-        },
-        {
-            "name": "wpackagist-plugin/flexible-spacer-block",
-            "version": "2.2.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/flexible-spacer-block/",
-                "reference": "tags/2.2.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/flexible-spacer-block.2.2.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/flexible-spacer-block/"
         },
         {
             "name": "wpackagist-plugin/folders",
@@ -5261,42 +5225,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/svg-support/"
-        },
-        {
-            "name": "wpackagist-plugin/wordpress-seo",
-            "version": "21.7",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/21.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.7.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "3.11.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/3.11.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.11.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-mail-smtp/"
         },
         {
             "name": "wpackagist-plugin/wp-nested-pages",

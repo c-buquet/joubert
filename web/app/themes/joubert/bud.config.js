@@ -5,7 +5,7 @@
  */
 module.exports = async (bud) => {
   bud
-    .setPublicPath("/app/themes/remarquable/public/")
+    .setPublicPath("/app/themes/joubert/public/")
 
     /**
      * Application entrypoints
@@ -26,7 +26,7 @@ module.exports = async (bud) => {
       build.rules.font.setUse([]);
       build.rules.font.setType('asset/resource');
       build.rules.font.setGenerator((app) => ({
-        filename: `app/themes/remarquable/public/fonts/[name][ext]`,
+        filename: `app/themes/joubert/public/fonts/[name][ext]`,
       }));
     })
     /**
@@ -40,10 +40,10 @@ module.exports = async (bud) => {
      *
      * This should be the URL you use to visit your local development server.
      */
-    .proxy('http://remarquable.test')
+    .proxy('http://joubert.test')
 
     /**
      * Development URL to be used in the browser.
      */
-    .serve('http://remarquable.test');
+    .serve('http://joubert.test');
 };

@@ -5,7 +5,7 @@
   <div class="flex justify-between items-center h-full">
     <div class="flex px-3 md:p-5 bg-green-primary h-full items-center border-r-2 lg:border-r-0">
       <a href="/" title="Home">
-        <img class="w-7 md:w-auto h-fit" src="{{ assetImg('logo.svg') }}" alt="Remarquable!">
+        <img class="w-7 md:w-auto h-fit" src="{{ assetImg('logo.svg') }}" alt="Joubert">
       </a>
     </div>
     <div class="flex h-full">

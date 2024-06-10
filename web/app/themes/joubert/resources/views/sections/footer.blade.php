@@ -3,7 +3,7 @@
 @endphp
 <footer class="main-footer bg-green-primary text-white-cloud px-10 pb-16 pt-12 border-t-2 border-white-cloud relative z-40">
   <div class="pb-4">
-    <img src="{{ $footerDatas['logo'] }}" alt="Remarquable!">
+    <img src="{{ $footerDatas['logo'] }}" alt="Joubert">
   </div>
 
   <div class="flex flex-row flex-wrap justify-between gap-x-4 gap-y-12">

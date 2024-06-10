@@ -98,7 +98,7 @@
     <div class="relative z-40 w-full h-14 border-b-2 border-white-cloud">
       <div class="flex justify-between items-center h-full pl-0 pr-5">
         <div class="flex px-3 bg-green-primary h-full items-center border-r-2 lg:border-r-0">
-          <img class="w-7 h-fit" src="{{ assetImg('logo.svg') }}" alt="Remarquable!">
+          <img class="w-7 h-fit" src="{{ assetImg('logo.svg') }}" alt="Joubert">
         </div>
 
         <div class="bg-green-feat-work-continue flex items-center cursor-pointer" id="close-popup-feat-work">
