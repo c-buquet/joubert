@@ -42,9 +42,9 @@
       "package": {
         "name": "wpackagist-plugin/advanced-custom-fields-pro",
         "type": "wordpress-plugin",
-        "version": "6.2.4",
+        "version": "6.3.1.2",
         "dist": {
-          "url": "https://connect.advancedcustomfields.com/index.php?v=6.2.4&p=pro&a=download&k=b3JkZXJfaWQ9MTQwNDIwfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wOS0yMSAxNTowMzowOA==",
+          "url": "https://connect.advancedcustomfields.com/index.php?v=6.3.1.2&p=pro&a=download&k=b3JkZXJfaWQ9MTQwNDIwfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wOS0yMSAxNTowMzowOA==",
           "type": "zip"
         }
       }
@@ -60,7 +60,7 @@
     "roots/wordpress": "^6.0",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
-    "wpackagist-plugin/advanced-custom-fields-pro": "^6.2",
+    "wpackagist-plugin/advanced-custom-fields-pro": "^6.3",
     "soberwp/controller": "^2.1",
     "larapack/dd": "^1.1",
     "roots/acorn": "^2.0",
