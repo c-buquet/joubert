@@ -114,7 +114,7 @@ module.exports = {
           'gold' : '#af9f6c',
           'primary' : '#3f3f3f',
           'light' : '#af9f6c',
-          'lightest' : '#DFE9EA',
+          'lightest' : 'rgb(196, 171, 95)',
           'dark' : '#333333',
           'paragraph' : '#345F62',
           'feat-work-continue': 'rgba(0, 31, 49, 1)',
