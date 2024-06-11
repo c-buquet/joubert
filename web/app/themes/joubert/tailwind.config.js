@@ -111,10 +111,11 @@ module.exports = {
       },
       colors: {
         'green': {
-          'primary' : '#03464A',
-          'light' : '#C9EBED',
+          'gold' : '#af9f6c',
+          'primary' : '#3f3f3f',
+          'light' : '#af9f6c',
           'lightest' : '#DFE9EA',
-          'dark' : '#003235',
+          'dark' : '#333333',
           'paragraph' : '#345F62',
           'feat-work-continue': 'rgba(0, 31, 49, 1)',
         },

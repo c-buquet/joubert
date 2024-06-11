@@ -1,3 +1,4 @@
+/*
 import { gsap } from "gsap";
 import * as lottie from 'lottie-web'
 import * as data from '../../data/remarquable-loader.json'
@@ -27,3 +28,4 @@ if (window.location.href.indexOf("/wp") === -1) {
       .set(wrapper, { className: "+=hidden" }); // Démarre après la disparition du fond bleu
   }
 }
+*/

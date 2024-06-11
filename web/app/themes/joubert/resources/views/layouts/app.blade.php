@@ -4,10 +4,13 @@
 
 @include('sections.header')
 
-<div id="loading" class="bg-green-primary {{ $_SESSION['disable_animations'] ? "hidden" : "block" }}">
-  <div id="loading-icon" class="absolute left-1/2 top-[43%] sm:top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full md:w-8/12 xl:w-1/2">
+<div class="hidden hide-lodader">
+  <div id="loading" class="bg-green-primary {{ $_SESSION['disable_animations'] ? "hidden" : "block" }}">
+    <div id="loading-icon" class="absolute left-1/2 top-[43%] sm:top-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-full md:w-8/12 xl:w-1/2">
+    </div>
   </div>
 </div>
+
 
 <main id="main" class="main relative {{ is_admin() ? 'text-black' : 'text-white-cloud' }}">
     <div class="hidden lg:block w-[50px] md:w-[80px] h-full absolute left-0 top-0 z-30 bg-green-primary border-r-2 border-white-cloud"></div>
