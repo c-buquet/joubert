@@ -1,0 +1,37 @@
+.metal-prices {
+    max-width: 800px;
+    margin: auto;
+}
+
+.current-price-title{
+    margin-bottom:2rem;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+#metal-selector, #period-selector {
+    padding: 5px;
+    margin: 5px;
+}
+
+/* Style pour les listes déroulantes */
+#metal-selector, #period-selector {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+/* Style pour les labels et axes du graphique */
+canvas {
+    color: #ffffff;
+}
+
+/* Style pour la légende du graphique */
+.chartjs-legend {
+    color: #ffffff;
+}

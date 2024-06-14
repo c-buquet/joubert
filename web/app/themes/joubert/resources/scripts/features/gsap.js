@@ -30,7 +30,7 @@ setTimeout(() => {
       });
     });
   }
-}, "5200");
+}, "1");
 
 function checkAttribute(element, attribute) {
   let attr = $(element).attr(attribute);
