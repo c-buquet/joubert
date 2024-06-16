@@ -61,3 +61,15 @@ function metal_prices_settings_page_html() {
     </div>
     <?php
 }
+
+function metal_prices_settings_menu() {
+    add_options_page(
+        'Metal Prices Settings',
+        'Metal Prices',
+        'manage_options',
+        'metal-prices-settings',
+        'metal_prices_settings_page_html'
+    );
+}
+add_action('admin_menu', 'metal_prices_settings_menu');
+

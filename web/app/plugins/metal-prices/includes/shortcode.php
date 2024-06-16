@@ -19,7 +19,14 @@ function metal_prices_shortcode($atts) {
 
     $current_price = json_decode($current_price, true);
     $history = json_decode($history, true);
-    
+
+    // Calculate the variation
+    $previous_price = $history[count($history) - 2]['price'];
+    $price_change = $current_price['price'] - $previous_price;
+    $percentage_change = ($price_change / $previous_price) * 100;
+    $change_class = $price_change >= 0 ? 'positive-change' : 'negative-change';
+    $percentage_change_formatted = ($price_change >= 0 ? '+' : '') . number_format($percentage_change, 2);
+
     // Enqueue Chart.js and the date adapter
     wp_enqueue_script('chartjs', 'https://cdn.jsdelivr.net/npm/chart.js', array(), null, true);
     wp_enqueue_script('chartjs-adapter-date-fns', 'https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns', array('chartjs'), null, true);
@@ -34,8 +41,11 @@ function metal_prices_shortcode($atts) {
 
     <div class="text-white-cloud bg-green-primary" data-gsap>
         <div class="container mx-auto">
-            <div class="current-price-title" data-anim data-position="0" data-from='{"z":-20,"x": -100,"autoAlpha":0}' data-to='{"x":0,"autoAlpha":1,"duration": 1.25}'>
+            <div data-anim data-position="0.25" data-from='{"x": -100,"autoAlpha":0}' data-to='{"x": 0,"autoAlpha":1,"duration": 1.25}'>
                 <h2 id="current-price-title">Prix courant de <?php echo esc_html($metal_name); ?>: <?php echo esc_html($current_price['price']); ?> €</h2>
+                <span id="price-change" class="<?php echo esc_attr($change_class); ?>">
+                    (<?php echo $price_change >= 0 ? '+' : ''; ?><?php echo number_format($price_change, 2); ?> €, <?php echo $percentage_change_formatted; ?>%)
+                </span>
             </div>
             <div class="metal-prices" data-anim data-position="0.75" data-from='{"y": 100,"autoAlpha":0}' data-to='{"y": 0,"autoAlpha":1,"duration": 1.25}'>
 
@@ -60,142 +70,153 @@ function metal_prices_shortcode($atts) {
     </div>
 
     <script>
-jQuery(document).ready(function($) {
-    function fetchAndRenderChart(metal, period) {
-        $.ajax({
-            url: `http://127.0.0.1:8000/api/metal/${metal}/history?interval=${period}`,
-            method: 'GET',
-            success: function(data) {
-                var metalName = getMetalName(metal);
-                var metalColor = getMetalColor(metal);
+        jQuery(document).ready(function($) {
+            function fetchAndRenderChart(metal, period) {
+                $.ajax({
+                    url: `http://127.0.0.1:8000/api/metal/${metal}/history?interval=${period}`,
+                    method: 'GET',
+                    success: function(data) {
+                        var metalName = getMetalName(metal);
+                        var metalColor = getMetalColor(metal);
 
-                $('#current-price-title').text(`Prix courant ${metalName}: ${data[data.length - 1].price} €`);
+                        // Calculate the variation
+                        var currentPrice = data[data.length - 1].price;
+                        var previousPrice = data[data.length - 2].price;
+                        var priceChange = currentPrice - previousPrice;
+                        var percentageChange = (priceChange / previousPrice) * 100;
+                        var changeClass = priceChange >= 0 ? 'positive-change' : 'negative-change';
+                        var percentageChangeFormatted = (priceChange >= 0 ? '+' : '') + percentageChange.toFixed(2);
 
-                // Filter data to exclude the current date and include only the last 12 months
-                if (period === '1y') {
-                    const now = new Date();
-                    data = data.filter(entry => {
-                        const entryDate = new Date(entry.date);
-                        return entryDate < now && entryDate >= new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
-                    });
-                }
+                        $('#current-price-title').text(`Prix courant de ${metalName}: ${currentPrice} €`);
+                        $('#price-change').text(`(${priceChange >= 0 ? '+' : ''}${priceChange.toFixed(2)} €, ${percentageChangeFormatted}%)`)
+                                          .removeClass('positive-change negative-change')
+                                          .addClass(changeClass);
 
-                var ctx = document.getElementById('metalPricesChart').getContext('2d');
-                var labels = data.map(function(entry) { return entry.date; });
-                var prices = data.map(function(entry) { return entry.price; });
-
-                if (window.metalChart) {
-                    window.metalChart.destroy();
-                }
-
-                var xAxisOptions = {
-                    type: 'time',
-                    time: {
-                        unit: 'day',
-                        tooltipFormat:'dd/MM/yyyy',
-                        displayFormats: {
-                            day: 'd MMM yyyy',
+                        // Filter data to exclude the current date and include only the last 12 months
+                        if (period === '1y') {
+                            const now = new Date();
+                            data = data.filter(entry => {
+                                const entryDate = new Date(entry.date);
+                                return entryDate < now && entryDate >= new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
+                            });
                         }
-                    },
-                    ticks: {
-                        color: '#ffffff' // Color for x-axis labels
-                    },
-                    grid: {
-                        color: 'rgba(255, 255, 255, 0.1)' // Light gray grid lines
-                    }
-                };
 
-                if (period === '1y') {
-                    xAxisOptions.time.unit = 'month';
-                    xAxisOptions.time.displayFormats = {
-                        month: 'MMM'
-                    };
-                    xAxisOptions.time.stepSize = 1;
-                }
+                        var ctx = document.getElementById('metalPricesChart').getContext('2d');
+                        var labels = data.map(function(entry) { return entry.date; });
+                        var prices = data.map(function(entry) { return entry.price; });
 
-                window.metalChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: `Prix ${metalName} (€) `,
-                            data: prices,
-                            borderColor: metalColor,
-                            borderWidth: 2,
-                            borderDash: [],
-                            pointBackgroundColor: metalColor,
-                            pointBorderColor: metalColor,
-                            pointRadius: 3,
-                            pointHoverRadius: 7,
-                            backgroundColor: metalColor,
-                            fill: false
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            x: xAxisOptions,
-                            y: {
-                                ticks: {
-                                    color: '#ffffff' // Color for y-axis labels
+                        if (window.metalChart) {
+                            window.metalChart.destroy();
+                        }
+
+                        var xAxisOptions = {
+                            type: 'time',
+                            time: {
+                                unit: 'day',
+                                tooltipFormat: 'dd/MM/yyyy',
+                                displayFormats: {
+                                    day: 'd MMM yyyy',
+                                }
+                            },
+                            ticks: {
+                                color: '#ffffff' // Color for x-axis labels
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)' // Light gray grid lines
+                            }
+                        };
+
+                        if (period === '1y') {
+                            xAxisOptions.time.unit = 'month';
+                            xAxisOptions.time.displayFormats = {
+                                month: 'MMM'
+                            };
+                            xAxisOptions.time.stepSize = 1;
+                        }
+
+                        window.metalChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: labels,
+                                datasets: [{
+                                    label: `Prix ${metalName} (€) `,
+                                    data: prices,
+                                    borderColor: metalColor,
+                                    borderWidth: 2,
+                                    borderDash: [],
+                                    pointBackgroundColor: metalColor,
+                                    pointBorderColor: metalColor,
+                                    pointRadius: 3,
+                                    pointHoverRadius: 7,
+                                    backgroundColor: metalColor,
+                                    fill: false
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    x: xAxisOptions,
+                                    y: {
+                                        ticks: {
+                                            color: '#ffffff' // Color for y-axis labels
+                                        },
+                                        grid: {
+                                            color: 'rgba(255, 255, 255, 0.1)' // Light gray grid lines
+                                        }
+                                    }
                                 },
-                                grid: {
-                                    color: 'rgba(255, 255, 255, 0.1)' // Light gray grid lines
-                                }
+                                plugins: {
+                                    legend: {
+                                        labels: {
+                                            color: '#ffffff' // Color for legend labels
+                                        }
+                                    }
+                                },
                             }
-                        },
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: '#ffffff' // Color for legend labels
-                                }
-                            }
-                        },
+                        });
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('Error fetching data: ', textStatus, errorThrown);
                     }
                 });
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.error('Error fetching data: ', textStatus, errorThrown);
             }
+
+            function getMetalName(code) {
+                var metals = {
+                    'XAU': 'Or',
+                    'XAG': 'Argent',
+                    'XPT': 'Platine',
+                    'XPD': 'Palladium'
+                };
+
+                return metals[code] || code;
+            }
+
+            function getMetalColor(code) {
+                var colors = {
+                    'XAU': 'rgb(196, 171, 95)',
+                    'XAG': 'silver',
+                    'XPT': 'gray',
+                    'XPD': 'darkgray'
+                };
+
+                return colors[code] || 'black';
+            }
+
+            $('#metal-selector').on('change', function() {
+                var metal = $(this).val();
+                var period = $('#period-selector').val();
+                fetchAndRenderChart(metal, period);
+            });
+
+            $('#period-selector').on('change', function() {
+                var period = $(this).val();
+                var metal = $('#metal-selector').val();
+                fetchAndRenderChart(metal, period);
+            });
+
+            // Initial load
+            fetchAndRenderChart('<?php echo esc_js($metal); ?>', '<?php echo esc_js($period); ?>');
         });
-    }
-
-    function getMetalName(code) {
-        var metals = {
-            'XAU': 'Or',
-            'XAG': 'Argent',
-            'XPT': 'Platine',
-            'XPD': 'Palladium'
-        };
-
-        return metals[code] || code;
-    }
-
-    function getMetalColor(code) {
-        var colors = {
-            'XAU': 'rgb(196, 171, 95)',
-            'XAG': 'silver',
-            'XPT': 'gray',
-            'XPD': 'darkgray'
-        };
-
-        return colors[code] || 'black';
-    }
-
-    $('#metal-selector').on('change', function() {
-        var metal = $(this).val();
-        var period = $('#period-selector').val();
-        fetchAndRenderChart(metal, period);
-    });
-
-    $('#period-selector').on('change', function() {
-        var period = $(this).val();
-        var metal = $('#metal-selector').val();
-        fetchAndRenderChart(metal, period);
-    });
-
-    // Initial load
-    fetchAndRenderChart('<?php echo esc_js($metal); ?>', '<?php echo esc_js($period); ?>');
-});
     </script>
 
     <?php
