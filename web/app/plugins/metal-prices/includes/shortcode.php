@@ -14,16 +14,24 @@ function metal_prices_shortcode($atts) {
     $metal = strtoupper($atts['metal']);
     $period = $atts['period'];
 
-    $current_price = file_get_contents("http://127.0.0.1:8000/api/metal/{$metal}/current");
+    $current_data = file_get_contents("http://127.0.0.1:8000/api/metal/{$metal}/current");
     $history = file_get_contents("http://127.0.0.1:8000/api/metal/{$metal}/history?interval={$period}");
 
-    $current_price = json_decode($current_price, true);
+    $current_data = json_decode($current_data, true);
     $history = json_decode($history, true);
 
+    $current_price = $current_data['current'];
+    $previous_price = $current_data['previous'];
+
     // Calculate the variation
-    $previous_price = $history[count($history) - 2]['price'];
-    $price_change = $current_price['price'] - $previous_price;
-    $percentage_change = ($price_change / $previous_price) * 100;
+    if ($previous_price) {
+        $price_change = $current_price['price'] - $previous_price['price'];
+        $percentage_change = ($price_change / $previous_price['price']) * 100;
+    } else {
+        $price_change = 0;
+        $percentage_change = 0;
+    }
+
     $change_class = $price_change >= 0 ? 'positive-change' : 'negative-change';
     $percentage_change_formatted = ($price_change >= 0 ? '+' : '') . number_format($percentage_change, 2);
 
@@ -163,6 +171,28 @@ function metal_prices_shortcode($atts) {
                     console.error('Error fetching data: ', textStatus, errorThrown);
                 }
             });
+
+            // Fetch the current and previous prices
+            $.ajax({
+                url: `http://127.0.0.1:8000/api/metal/${metal}/current`,
+                method: 'GET',
+                success: function(data) {
+                    var currentPrice = data.current.price;
+                    var previousPrice = data.previous ? data.previous.price : currentPrice; // Handle the case where there's no previous price
+
+                    var priceChange = currentPrice - previousPrice;
+                    var percentageChange = (priceChange / previousPrice) * 100;
+
+                    var changeClass = priceChange >= 0 ? 'positive-change' : 'negative-change';
+                    var priceChangeFormatted = (priceChange >= 0 ? '+' : '') + priceChange.toFixed(2);
+                    var percentageChangeFormatted = (priceChange >= 0 ? '+' : '') + percentageChange.toFixed(2) + '%';
+
+                    $('#price-change').text(`(${priceChangeFormatted} €, ${percentageChangeFormatted})`).attr('class', changeClass);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error('Error fetching current price: ', textStatus, errorThrown);
+                }
+            });
         }
 
         function getMetalName(code) {
@@ -202,8 +232,7 @@ function metal_prices_shortcode($atts) {
         // Initial load
         fetchAndRenderChart('<?php echo esc_js($metal); ?>', '<?php echo esc_js($period); ?>');
     });
-</script>
-
+    </script>
 
     <?php
     return ob_get_clean();
