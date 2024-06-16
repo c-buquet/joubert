@@ -69,7 +69,7 @@ jQuery(document).ready(function($) {
                 var metalName = getMetalName(metal);
                 var metalColor = getMetalColor(metal);
 
-                $('#current-price-title').text(`Prix courant de ${metalName}: ${data[data.length - 1].price} €`);
+                $('#current-price-title').text(`Prix courant ${metalName}: ${data[data.length - 1].price} €`);
 
                 // Filter data to exclude the current date and include only the last 12 months
                 if (period === '1y') {
@@ -118,7 +118,7 @@ jQuery(document).ready(function($) {
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: `Prix ${metalName}`,
+                            label: `Prix ${metalName} (€) `,
                             data: prices,
                             borderColor: metalColor,
                             borderWidth: 2,
@@ -149,7 +149,7 @@ jQuery(document).ready(function($) {
                                     color: '#ffffff' // Color for legend labels
                                 }
                             }
-                        }
+                        },
                     }
                 });
             },
@@ -196,7 +196,6 @@ jQuery(document).ready(function($) {
     // Initial load
     fetchAndRenderChart('<?php echo esc_js($metal); ?>', '<?php echo esc_js($period); ?>');
 });
-
     </script>
 
     <?php
